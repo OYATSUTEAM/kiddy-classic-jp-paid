@@ -53,16 +53,19 @@ class _MainParts extends ConsumerWidget {
               ref.read(quizPageNotifierProvider.notifier).reset();
               Navigator.pushReplacementNamed(context, '/');
             },
-            child: Stack(children: [
-              Container(color: Colors.white),
-              Background(
-                name: 'assets/images/$folderName/end.png',
+            child: Container(
+              color: Colors.white,
+              width: screenSize.width,
+              height: screenSize.height,
+              child: Image.asset(
+                'assets/images/$folderName/end.png',
                 width: screenSize.width,
                 height: screenSize.height,
-              )
-            ]),
+                fit: BoxFit.cover,
+              ),
+            ),
           )
-        : _GameParts();
+        : Container(color: Colors.white, child: _GameParts());
   }
 }
 

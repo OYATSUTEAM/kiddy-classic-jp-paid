@@ -41,29 +41,22 @@ class _MainParts extends ConsumerWidget {
     Size screenSize = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(screenSize);
     return isAllCompleted
-        ? Stack(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  ref.read(puzzlePageNotifierProvider.notifier).reset();
-                  Navigator.pushReplacementNamed(context, '/');
-                },
-                child: Container(
-                  color: Colors.white,
-                  width: screenSize.width,
-                  height: screenSize.height,
-                  child: Stack(
-                    children: [
-                      Background(
-                        name: 'assets/images/$folder/end.png',
-                        width: screenSize.width,
-                        height: screenSize.height,
-                      ),
-                    ],
-                  ),
-                ),
+        ? GestureDetector(
+            onTap: () {
+              ref.read(puzzlePageNotifierProvider.notifier).reset();
+              Navigator.pushReplacementNamed(context, '/');
+            },
+            child: Container(
+              color: Colors.white,
+              width: screenSize.width,
+              height: screenSize.height,
+              child: Image.asset(
+                'assets/images/$folder/end.png',
+                width: screenSize.width,
+                height: screenSize.height,
+                fit: BoxFit.cover,
               ),
-            ],
+            ),
           )
         : Container(color: Colors.white, child: _GameParts(type));
   }
