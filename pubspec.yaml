@@ -1,0 +1,270 @@
+name: kiddy_classic
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  # audioplayers: ^6.4.0
+  just_audio: 0.9.46
+  path_provider_android:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/2266x1488/
+    - assets/images/2266x1488/Menu/
+    - assets/images/2266x1488/OnpuGame1/
+    - assets/images/2266x1488/OnpuGame1/To/
+    - assets/images/2266x1488/OnpuGame1/He/
+    - assets/images/2266x1488/OnpuGame2/
+    - assets/images/2266x1488/OnpuGame2/To/
+    - assets/images/2266x1488/OnpuGame2/He/
+    - assets/images/2266x1488/OnpuGame2/Icon/
+    - assets/images/2266x1488/OnpuGame2/Kenban/
+    - assets/images/2266x1488/LineSpaceA/
+    - assets/images/2266x1488/LineSpaceA/Line/
+    - assets/images/2266x1488/LineSpaceA/Line/Strawberry/
+    - assets/images/2266x1488/LineSpaceA/Line/Car/
+    - assets/images/2266x1488/LineSpaceA/Line/Helicopter/
+    - assets/images/2266x1488/LineSpaceA/Line/Ball/
+    - assets/images/2266x1488/LineSpaceA/Line/Lease/
+    - assets/images/2266x1488/LineSpaceA/Space/
+    - assets/images/2266x1488/LineSpaceA/Space/Onigiri/
+    - assets/images/2266x1488/LineSpaceA/Space/Coffee/
+    - assets/images/2266x1488/LineSpaceA/Space/GreenPepper/
+    - assets/images/2266x1488/LineSpaceA/Space/Star/
+    - assets/images/2266x1488/LineSpaceA/Space/Ribbon/
+    - assets/images/2266x1488/LineSpaceB/
+    - assets/images/2266x1488/LineSpaceB/Strawberry/
+    - assets/images/2266x1488/LineSpaceB/Car/
+    - assets/images/2266x1488/LineSpaceB/Helicopter/
+    - assets/images/2266x1488/LineSpaceB/Ball/
+    - assets/images/2266x1488/LineSpaceB/Lease/
+    - assets/images/2266x1488/LineSpaceC/
+    - assets/images/2266x1488/LineSpaceC/To/
+    - assets/images/2266x1488/LineSpaceC/He/
+    - assets/images/2266x1488/Onpu/
+    - assets/images/2266x1488/Kyufu/
+    - assets/images/2266x1488/To/
+    - assets/images/2266x1488/He/
+
+    - assets/images/2732x2048/
+    - assets/images/2732x2048/Menu/
+    - assets/images/2732x2048/OnpuGame1/
+    - assets/images/2732x2048/OnpuGame1/To/
+    - assets/images/2732x2048/OnpuGame1/He/
+    - assets/images/2732x2048/OnpuGame2/
+    - assets/images/2732x2048/OnpuGame2/To/
+    - assets/images/2732x2048/OnpuGame2/He/
+    - assets/images/2732x2048/OnpuGame2/Icon/
+    - assets/images/2732x2048/OnpuGame2/Kenban/
+    - assets/images/2732x2048/LineSpaceA/
+    - assets/images/2732x2048/LineSpaceA/Line/
+    - assets/images/2732x2048/LineSpaceA/Line/Strawberry/
+    - assets/images/2732x2048/LineSpaceA/Line/Car/
+    - assets/images/2732x2048/LineSpaceA/Line/Helicopter/
+    - assets/images/2732x2048/LineSpaceA/Line/Ball/
+    - assets/images/2732x2048/LineSpaceA/Line/Lease/
+    - assets/images/2732x2048/LineSpaceA/Space/
+    - assets/images/2732x2048/LineSpaceA/Space/Onigiri/
+    - assets/images/2732x2048/LineSpaceA/Space/Coffee/
+    - assets/images/2732x2048/LineSpaceA/Space/GreenPepper/
+    - assets/images/2732x2048/LineSpaceA/Space/Star/
+    - assets/images/2732x2048/LineSpaceA/Space/Ribbon/
+    - assets/images/2732x2048/LineSpaceB/
+    - assets/images/2732x2048/LineSpaceB/Strawberry/
+    - assets/images/2732x2048/LineSpaceB/Car/
+    - assets/images/2732x2048/LineSpaceB/Helicopter/
+    - assets/images/2732x2048/LineSpaceB/Ball/
+    - assets/images/2732x2048/LineSpaceB/Lease/
+    - assets/images/2732x2048/LineSpaceC/
+    - assets/images/2732x2048/LineSpaceC/To/
+    - assets/images/2732x2048/LineSpaceC/He/
+    - assets/images/2732x2048/Kyufu/
+    - assets/images/2732x2048/Onpu/
+    - assets/images/2732x2048/To/
+    - assets/images/2732x2048/He/
+
+    - assets/images/2796x1290/
+    - assets/images/2796x1290/Menu/
+    - assets/images/2796x1290/OnpuGame1/
+    - assets/images/2796x1290/OnpuGame1/To/
+    - assets/images/2796x1290/OnpuGame1/He/
+    - assets/images/2796x1290/OnpuGame2/
+    - assets/images/2796x1290/OnpuGame2/To/
+    - assets/images/2796x1290/OnpuGame2/He/
+    - assets/images/2796x1290/OnpuGame2/Icon/
+    - assets/images/2796x1290/OnpuGame2/Kenban/
+    - assets/images/2796x1290/LineSpaceA/
+    - assets/images/2796x1290/LineSpaceA/Line/
+    - assets/images/2796x1290/LineSpaceA/Line/Strawberry/
+    - assets/images/2796x1290/LineSpaceA/Line/Car/
+    - assets/images/2796x1290/LineSpaceA/Line/Helicopter/
+    - assets/images/2796x1290/LineSpaceA/Line/Ball/
+    - assets/images/2796x1290/LineSpaceA/Line/Lease/
+    - assets/images/2796x1290/LineSpaceA/Space/
+    - assets/images/2796x1290/LineSpaceA/Space/Onigiri/
+    - assets/images/2796x1290/LineSpaceA/Space/Coffee/
+    - assets/images/2796x1290/LineSpaceA/Space/GreenPepper/
+    - assets/images/2796x1290/LineSpaceA/Space/Star/
+    - assets/images/2796x1290/LineSpaceA/Space/Ribbon/
+    - assets/images/2796x1290/LineSpaceB/
+    - assets/images/2796x1290/LineSpaceB/Strawberry/
+    - assets/images/2796x1290/LineSpaceB/Car/
+    - assets/images/2796x1290/LineSpaceB/Helicopter/
+    - assets/images/2796x1290/LineSpaceB/Ball/
+    - assets/images/2796x1290/LineSpaceB/Lease/
+    - assets/images/2796x1290/LineSpaceC/
+    - assets/images/2796x1290/LineSpaceC/To/
+    - assets/images/2796x1290/LineSpaceC/He/
+    - assets/images/2796x1290/Onpu/
+    - assets/images/2796x1290/Kyufu/
+    - assets/images/2796x1290/To/
+    - assets/images/2796x1290/He/
+
+    - assets/images/1334x750/
+    - assets/images/1334x750/Menu/
+    - assets/images/1334x750/OnpuGame1/
+    - assets/images/1334x750/OnpuGame1/To/
+    - assets/images/1334x750/OnpuGame1/He/
+    - assets/images/1334x750/OnpuGame2/
+    - assets/images/1334x750/OnpuGame2/To/
+    - assets/images/1334x750/OnpuGame2/He/
+    - assets/images/1334x750/OnpuGame2/Icon/
+    - assets/images/1334x750/OnpuGame2/Kenban/
+    - assets/images/1334x750/LineSpaceA/
+    - assets/images/1334x750/LineSpaceA/Line/
+    - assets/images/1334x750/LineSpaceA/Line/Strawberry/
+    - assets/images/1334x750/LineSpaceA/Line/Car/
+    - assets/images/1334x750/LineSpaceA/Line/Helicopter/
+    - assets/images/1334x750/LineSpaceA/Line/Ball/
+    - assets/images/1334x750/LineSpaceA/Line/Lease/
+    - assets/images/1334x750/LineSpaceA/Space/
+    - assets/images/1334x750/LineSpaceA/Space/Onigiri/
+    - assets/images/1334x750/LineSpaceA/Space/Coffee/
+    - assets/images/1334x750/LineSpaceA/Space/GreenPepper/
+    - assets/images/1334x750/LineSpaceA/Space/Star/
+    - assets/images/1334x750/LineSpaceA/Space/Ribbon/
+    - assets/images/1334x750/LineSpaceB/
+    - assets/images/1334x750/LineSpaceB/Strawberry/
+    - assets/images/1334x750/LineSpaceB/Car/
+    - assets/images/1334x750/LineSpaceB/Helicopter/
+    - assets/images/1334x750/LineSpaceB/Ball/
+    - assets/images/1334x750/LineSpaceB/Lease/
+    - assets/images/1334x750/LineSpaceC/
+    - assets/images/1334x750/LineSpaceC/To/
+    - assets/images/1334x750/LineSpaceC/He/
+    - assets/images/1334x750/Onpu/
+    - assets/images/1334x750/Kyufu/
+    - assets/images/1334x750/To/
+    - assets/images/1334x750/He/
+    
+    - assets/ja_toon/
+    - assets/ja_toon/images/
+    - assets/ja_toon/images/animation/
+    - assets/ja_toon/images/2266x1488/
+    - assets/ja_toon/images/2266x1488/Do/
+    - assets/ja_toon/images/2266x1488/Re/
+    - assets/ja_toon/images/2266x1488/Mi/
+    - assets/ja_toon/images/2266x1488/Fa/
+    - assets/ja_toon/images/2266x1488/So/
+    - assets/ja_toon/images/2266x1488/Ra/
+    - assets/ja_toon/images/2266x1488/Si/
+    - assets/ja_toon/images/2266x1488/Do2/
+
+    - assets/ja_toon/images/2732x2048/
+    - assets/ja_toon/images/2732x2048/Do/
+    - assets/ja_toon/images/2732x2048/Re/
+    - assets/ja_toon/images/2732x2048/Mi/
+    - assets/ja_toon/images/2732x2048/Fa/
+    - assets/ja_toon/images/2732x2048/So/
+    - assets/ja_toon/images/2732x2048/Ra/
+    - assets/ja_toon/images/2732x2048/Si/
+    - assets/ja_toon/images/2732x2048/Do2/
+
+    - assets/ja_toon/images/2796x1290/
+    - assets/ja_toon/images/2796x1290/Do/
+    - assets/ja_toon/images/2796x1290/Re/
+    - assets/ja_toon/images/2796x1290/Mi/
+    - assets/ja_toon/images/2796x1290/Fa/
+    - assets/ja_toon/images/2796x1290/So/
+    - assets/ja_toon/images/2796x1290/Ra/
+    - assets/ja_toon/images/2796x1290/Si/
+    - assets/ja_toon/images/2796x1290/Do2/
+
+    - assets/ja_toon/images/1334x750/
+    - assets/ja_toon/images/1334x750/Do/
+    - assets/ja_toon/images/1334x750/Re/
+    - assets/ja_toon/images/1334x750/Mi/
+    - assets/ja_toon/images/1334x750/Fa/
+    - assets/ja_toon/images/1334x750/So/
+    - assets/ja_toon/images/1334x750/Ra/
+    - assets/ja_toon/images/1334x750/Si/
+    - assets/ja_toon/images/1334x750/Do2/
+
+
+    - assets/ja_heon/
+    - assets/ja_heon/images/
+    # - assets/ja_heon/images/animation/
+    - assets/ja_heon/images/2266x1488/
+    - assets/ja_heon/images/2266x1488/Do/
+    - assets/ja_heon/images/2266x1488/Re/
+    - assets/ja_heon/images/2266x1488/Mi/
+    - assets/ja_heon/images/2266x1488/Fa/
+    - assets/ja_heon/images/2266x1488/So/
+    - assets/ja_heon/images/2266x1488/Ra/
+    - assets/ja_heon/images/2266x1488/Si/
+    - assets/ja_heon/images/2266x1488/Do2/
+
+    - assets/ja_heon/images/2732x2048/
+    - assets/ja_heon/images/2732x2048/Do/
+    - assets/ja_heon/images/2732x2048/Re/
+    - assets/ja_heon/images/2732x2048/Mi/
+    - assets/ja_heon/images/2732x2048/Fa/
+    - assets/ja_heon/images/2732x2048/So/
+    - assets/ja_heon/images/2732x2048/Ra/
+    - assets/ja_heon/images/2732x2048/Si/
+    - assets/ja_heon/images/2732x2048/Do2/
+
+    - assets/ja_heon/images/2796x1290/
+    - assets/ja_heon/images/2796x1290/Do/
+    - assets/ja_heon/images/2796x1290/Re/
+    - assets/ja_heon/images/2796x1290/Mi/
+    - assets/ja_heon/images/2796x1290/Fa/
+    - assets/ja_heon/images/2796x1290/So/
+    - assets/ja_heon/images/2796x1290/Ra/
+    - assets/ja_heon/images/2796x1290/Si/
+    - assets/ja_heon/images/2796x1290/Do2/
+
+    - assets/ja_heon/images/1334x750/
+    - assets/ja_heon/images/1334x750/Do/
+    - assets/ja_heon/images/1334x750/Re/
+    - assets/ja_heon/images/1334x750/Mi/
+    - assets/ja_heon/images/1334x750/Fa/
+    - assets/ja_heon/images/1334x750/So/
+    - assets/ja_heon/images/1334x750/Ra/
+    - assets/ja_heon/images/1334x750/Si/
+    - assets/ja_heon/images/1334x750/Do2/
+
+
+    - assets/sounds/
+    - assets/sounds/OnpuGame1/
+    - assets/sounds/quiz/
+    - assets/sounds/doremi/
+    - assets/sounds/back.mp3
