@@ -71,9 +71,7 @@ class LineSpaceBPageStateNotifier extends StateNotifier<LineSpaceBPageState> {
       // }
 
       await _audioPlayer.setAsset('assets/sounds/002.mp3');
-       _audioPlayer.play();
-
-      // await Future.delayed(const Duration(seconds: 2));
+      _audioPlayer.play();
 
       // await _audioPlayer.stop();
 
@@ -81,6 +79,7 @@ class LineSpaceBPageStateNotifier extends StateNotifier<LineSpaceBPageState> {
         // if (_completeAudioPlayer != null) {
         //   await _completeAudioPlayer.stop();
         // }
+        await Future.delayed(const Duration(seconds: 1));
 
         _completeAudioPlayer.setAsset('assets/sounds/003_g.mp3');
         _completeAudioPlayer.play();

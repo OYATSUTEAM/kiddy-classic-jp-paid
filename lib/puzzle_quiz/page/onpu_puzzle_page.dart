@@ -45,7 +45,8 @@ class _MainParts extends ConsumerWidget {
     bool isAllCompleted = ref.watch(
         onpuPuzzlePageNotifierProvider.select((state) => state.isAllCompleted));
     Size screenSize = getScreenSize(context);
-    final String folder = getSizeFolderName(context);
+    // final String folder = getSizeFolderName(context);
+    final String folder = getSizeFolderNameFromSize(screenSize);
     return isAllCompleted
         ? GestureDetector(
             onTap: () {
