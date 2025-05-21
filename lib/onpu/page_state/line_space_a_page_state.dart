@@ -101,7 +101,6 @@ class LineSpaceAPageStateNotifier extends StateNotifier<LineSpaceAPageState> {
           ));
           _audioPlayer.setAsset('assets/sounds/002.mp3');
           _audioPlayer.play();
-          // await Future.delayed(const Duration(seconds: 2));
           // if (mounted) {
           //   await _audioPlayer.stop();
           // }
@@ -110,6 +109,7 @@ class LineSpaceAPageStateNotifier extends StateNotifier<LineSpaceAPageState> {
             //   await _audioPlayer.stop();
             // }
 
+            await Future.delayed(const Duration(seconds: 1));
             _completeAudioPlayer.setAsset('assets/sounds/003_g.mp3');
             _completeAudioPlayer.play();
             state = LineSpaceAPageState(
@@ -222,7 +222,6 @@ class LineSpaceAPageStateNotifier extends StateNotifier<LineSpaceAPageState> {
     level++;
     if (level >= spaceStickerPatternNum) {
       level = state.level;
-
 
       end();
       _audioPlayer.setAsset('assets/sounds/next.mp3');
