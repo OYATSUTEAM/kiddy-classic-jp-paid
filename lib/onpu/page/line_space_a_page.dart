@@ -152,8 +152,6 @@ class _NextButtonPart extends ConsumerWidget {
                 imageName: getLineSpaceANextButtonImageName(context),
                 position: nextButtonSetting.position,
                 buttonSize: nextButtonSetting.size,
-
-                
               ),
               Completed(
                 imageName: 'assets/images/Completed.png',
