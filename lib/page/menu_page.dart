@@ -2,9 +2,12 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:kiddy_classic/doremi/global.dart';
 import 'package:flutter/material.dart';
+import 'package:kiddy_classic/onpu/page_state/line_space_a_page_state.dart';
+import 'package:kiddy_classic/onpu/page_state/line_space_b_page_state.dart';
 import '/setting.dart';
 import '/widget/background.dart';
 import '/widget/menu_button.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key, required this.part});
@@ -279,12 +282,13 @@ class _MenuParts2 extends StatelessWidget {
   }
 }
 
-class _MenuParts3 extends StatelessWidget {
+class _MenuParts3 extends ConsumerWidget {
   final GlobalKey widgetKey;
   const _MenuParts3({Key? key, required this.widgetKey})
       : super(key: widgetKey);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 3);
@@ -305,10 +309,7 @@ class _MenuParts3 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuA';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_ken_he';
-              // }
+              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button1Setting.position,
@@ -317,10 +318,7 @@ class _MenuParts3 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuA_space';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu1_he';
-              // }
+              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button2Setting.position,
@@ -329,10 +327,8 @@ class _MenuParts3 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuB';
+              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
               int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button3Setting.position,
@@ -340,7 +336,9 @@ class _MenuParts3 extends StatelessWidget {
           ),
           MenuButton(
             onTap: () {
-              Navigator.of(context).pushNamed('/onpuB_space');
+              String nextPageRoute = '/onpuB_space';
+              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button4Setting.position,
             buttonSize: menu3Button4Setting.size,
@@ -377,10 +375,6 @@ class _MenuParts4 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuC_space';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_ken_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button1Setting.position,
@@ -389,10 +383,6 @@ class _MenuParts4 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuC';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu1_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button2Setting.position,
@@ -430,10 +420,6 @@ class _MenuParts5 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpu2_ken';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_ken_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu5Button1Setting.position,
@@ -442,10 +428,6 @@ class _MenuParts5 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpu1';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu1_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu5Button2Setting.position,
@@ -483,10 +465,6 @@ class _MenuParts6 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpu2';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_ken_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu6Button1Setting.position,
@@ -529,10 +507,6 @@ class _MenuParts7 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/quiz';
-              // int rand = Random().nextInt(2);
-              // if (rand == 1) {
-              //   nextPageRoute = '/onpu2_ken_he';
-              // }
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu7Button1Setting.position,
