@@ -66,19 +66,10 @@ class LineSpaceBPageStateNotifier extends StateNotifier<LineSpaceBPageState> {
       isPushed[idx] = true;
       _completedCount++;
 
-      // if (_audioPlayer != null) {
-      //   await _audioPlayer.stop();
-      // }
-
-      await _audioPlayer.setAsset('assets/sounds/002.mp3');
+      _audioPlayer.setAsset('assets/sounds/002.mp3');
       _audioPlayer.play();
 
-      // await _audioPlayer.stop();
-
       if (_completedCount >= _correctCount) {
-        // if (_completeAudioPlayer != null) {
-        //   await _completeAudioPlayer.stop();
-        // }
         await Future.delayed(const Duration(seconds: 1));
 
         _completeAudioPlayer.setAsset('assets/sounds/003_g.mp3');
@@ -90,11 +81,6 @@ class LineSpaceBPageStateNotifier extends StateNotifier<LineSpaceBPageState> {
           isAllCompleted: false,
           level: state.level,
         );
-        // await Future.delayed(const Duration(seconds: 2));
-
-        // if (context.mounted) {
-        //   await _completeAudioPlayer.stop();
-        // }
       }
     } else {
       // 不正解
@@ -117,8 +103,6 @@ class LineSpaceBPageStateNotifier extends StateNotifier<LineSpaceBPageState> {
       isAllCompleted: false,
       level: state.level,
     );
-    // await Future.delayed(const Duration(seconds: 4));
-    // await _startAudioPlayer.stop();
   }
 
   void initStart(BuildContext context, bool lineType) {

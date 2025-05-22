@@ -48,6 +48,7 @@ class _StickerState extends State<Sticker> {
   final _acceptedController =
       StreamController<StickerPosition>(); // ドラッグ成功時にTaget側の位置を受け取るために使用
   final _audioPlayer = AudioPlayer();
+  final _audioPlayer1 = AudioPlayer();
   StreamSubscription<StickerPosition>? _acceptedSubscription;
   double left = 0;
   double top = 0;
@@ -152,8 +153,8 @@ class _StickerState extends State<Sticker> {
             widget.onCompleted();
           },
           onDraggableCanceled: (velocity, offset) {
-            _audioPlayer.setAsset(widget.incorrectSoundName);
-            _audioPlayer.play();
+            _audioPlayer1.setAsset(widget.incorrectSoundName);
+            _audioPlayer1.play();
             bool forceMove = false;
             double newLeft = left;
             double newTop = top;

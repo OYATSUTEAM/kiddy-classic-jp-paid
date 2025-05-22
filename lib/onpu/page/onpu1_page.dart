@@ -18,7 +18,6 @@ class _Onpu1PageState extends ConsumerState<Onpu1Page> {
   @override
   void dispose() {
     ref.read(onpu1PageNotifierProvider.notifier).reset();
-
     super.dispose();
   }
 

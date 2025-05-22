@@ -30,7 +30,7 @@ class Doremi extends ConsumerWidget {
         '/': (context) => TitlePage(
               imageName: '${FlavorConfig.assetPath}/images/Title.png',
               nextPageRoute: '/learn',
-              audioPlayer: audioPlayer,
+              // audioPlayer: audioPlayer,
             ),
         '/learn': (context) => LearnPage(
               imageName: setting.learnImageName,
@@ -44,7 +44,7 @@ class Doremi extends ConsumerWidget {
             stickerImageName: setting.stickerImageName,
             backgroundImageName: setting.stickerBackImageName,
             targetNum: getStickerCorrectNum(0, setting.soundNo),
-            audioPlayer: audioPlayer,
+            // audioPlayer: audioPlayer,
           );
           final stateNotifier =
               ref.read(stickerPageStateNotifierProvider.notifier);
@@ -57,7 +57,7 @@ class Doremi extends ConsumerWidget {
             stickerImageName: setting.stickerImageName,
             backgroundImageName: setting.stickerBackImageName2,
             targetNum: getStickerCorrectNum(1, setting.soundNo),
-            audioPlayer: audioPlayer,
+            // audioPlayer: audioPlayer,
           );
           final stateNotifier =
               ref.read(stickerPageStateNotifierProvider.notifier);

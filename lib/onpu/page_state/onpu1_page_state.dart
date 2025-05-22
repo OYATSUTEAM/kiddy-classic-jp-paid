@@ -29,6 +29,7 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
   final _audioPlayer2 = AudioPlayer();
   final _backgroundPlayer = AudioPlayer();
   final _completedAudioPlayer = AudioPlayer();
+  final _errorAudioPlayer = AudioPlayer();
   bool _isTransitioning = false;
   int _flashGeneration = 0;
 
@@ -124,8 +125,8 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
       _audioPlayer.setAsset('assets/sounds/002.mp3');
       _audioPlayer.play();
     } else {
-      _audioPlayer.setAsset('assets/sounds/OnpuGame1/005_e.mp3');
-      _audioPlayer.play();
+      _errorAudioPlayer.setAsset('assets/sounds/OnpuGame1/005_e.mp3');
+      _errorAudioPlayer.play();
     }
     _isPushed[state.index] = true;
   }

@@ -20,6 +20,7 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
   int _targetCount = 0;
   int _keyType = -1;
   final _audioPlayer = AudioPlayer();
+  final errorAudioPlayer = AudioPlayer();
   List<OnpuQuestionSetting> question = List.empty(growable: true);
 
   Onpu2PageStateNotifier()
@@ -71,29 +72,13 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
     }
 
     if (question[state.level].correctIdx == idx) {
-      // if (_audioPlayer != null) {
-      //   await _audioPlayer.stop();
-      // }
-
       _audioPlayer.setAsset('assets/sounds/002.mp3');
       _audioPlayer.play();
-
       _correctCount++;
       nextLevel();
-      // await Future.delayed(const Duration(seconds: 2));
-      // if (mounted) {
-      //   await _audioPlayer.stop();
-      // }
     } else {
-      // if (_audioPlayer != null) {
-      //   await _audioPlayer.stop();
-      // }
-      _audioPlayer.setAsset('assets/sounds/005_e.mp3');
-      _audioPlayer.play();
-
-      // if (mounted) {
-      //   await _audioPlayer.stop();
-      // }
+      errorAudioPlayer.setAsset('assets/sounds/005_e.mp3');
+      errorAudioPlayer.play();
     }
   }
 

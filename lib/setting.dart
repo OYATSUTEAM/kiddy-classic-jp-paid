@@ -90,27 +90,18 @@ ViewSetting getViewSetting(
   );
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-// メニュー
-/////////////////////////////////////////////////////////////////////////////////////////////////
 String getBackGroundImageName(String folderName, int idx) {
   return 'assets/images/$folderName/Menu/menu$idx.png';
 }
-
-//==================================================================================    doremi to
-//==================================================================================    doremi to
-//==================================================================================    doremi to
-//==================================================================================    doremi to
-//==================================================================================    doremi to
 
 List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(85, 270),
+        position: const Offset(85, 180),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(102, 430),
+        position: const Offset(102, 350),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(480, 160),
@@ -122,10 +113,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(630, 270),
+        position: const Offset(630, 180),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(770, 430),
+        position: const Offset(770, 350),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(950, 160),
@@ -137,10 +128,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(1180, 270),
+        position: const Offset(1180, 180),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(1415, 430),
+        position: const Offset(1415, 350),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1440, 160),
@@ -152,10 +143,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(1730, 270),
+        position: const Offset(1730, 180),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(2090, 430),
+        position: const Offset(2090, 350),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1920, 160),
@@ -167,10 +158,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(85, 600),
+        position: const Offset(85, 500),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(102, 800),
+        position: const Offset(102, 730),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(480, 430),
@@ -182,10 +173,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(630, 600),
+        position: const Offset(630, 500),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(770, 800),
+        position: const Offset(770, 730),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(950, 430),
@@ -197,10 +188,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(1180, 600),
+        position: const Offset(1180, 500),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(1415, 800),
+        position: const Offset(1415, 730),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1440, 430),
@@ -212,10 +203,10 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(1730, 600),
+        position: const Offset(1730, 500),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(2090, 800),
+        position: const Offset(2090, 730),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1920, 430),
@@ -226,26 +217,19 @@ List<List<ViewSetting>> _doremiToButtonSetting = [
   ],
 ];
 
-ViewSetting getDoremiToButtonViewSetting(BuildContext context, int index) {
-  if (index > _doremiToButtonSetting.length) {
-    index = _doremiToButtonSetting.length - 1;
-  }
-  return getViewSetting(_doremiToButtonSetting[index], context);
-}
-//==================================================================================    doremi he
-//==================================================================================    doremi he
-//==================================================================================    doremi he
-//==================================================================================    doremi he
-//==================================================================================    doremi he
+//==================================================================================    doremi to
+//==================================================================================    doremi to
+//==================================================================================    doremi to
+//==================================================================================    doremi to
 
 List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(85, 270),
+        position: const Offset(85, 820),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(102, 430),
+        position: const Offset(102, 1120),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(480, 720),
@@ -257,10 +241,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(630, 270),
+        position: const Offset(630, 820),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(770, 430),
+        position: const Offset(770, 1120),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(950, 720),
@@ -272,10 +256,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(1180, 270),
+        position: const Offset(1180, 820),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(1415, 430),
+        position: const Offset(1415, 1120),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1440, 720),
@@ -287,10 +271,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(1730, 270),
+        position: const Offset(1730, 820),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(2090, 430),
+        position: const Offset(2090, 1120),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1920, 720),
@@ -302,10 +286,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(85, 600),
+        position: const Offset(85, 1150),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(102, 800),
+        position: const Offset(102, 1500),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(480, 990),
@@ -317,10 +301,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(630, 600),
+        position: const Offset(630, 1150),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(770, 800),
+        position: const Offset(770, 1500),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(950, 990),
@@ -332,10 +316,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ト音どれみ-ど
     ViewSetting(
-        position: const Offset(1180, 600),
+        position: const Offset(1180, 1150),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(1415, 800),
+        position: const Offset(1415, 1500),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1440, 990),
@@ -347,10 +331,10 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   [
     // ヘ音どれみ-れ
     ViewSetting(
-        position: const Offset(1730, 600),
+        position: const Offset(1730, 1150),
         size: const Size(484, 280)), // 2266x1488
     ViewSetting(
-        position: const Offset(2090, 800),
+        position: const Offset(2090, 1500),
         size: const Size(583, 327)), // 2732x2048
     ViewSetting(
         position: const Offset(1920, 990),
@@ -361,21 +345,19 @@ List<List<ViewSetting>> _doremiHeButtonSetting = [
   ],
 ];
 
-ViewSetting getDoremiHeButtonViewSetting(BuildContext context, int index) {
-  if (index > _doremiHeButtonSetting.length) {
-    index = _doremiHeButtonSetting.length - 1;
-  }
-  return getViewSetting(_doremiHeButtonSetting[index], context);
-}
+//==================================================================================    doremi he
+//==================================================================================    doremi he
+//==================================================================================    doremi he
+//==================================================================================    doremi he
 
 List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間A 線の上
     ViewSetting(
-        position: const Offset(120, 260),
+        position: const Offset(120, 200),
         size: const Size(400, 530)), // 2266x1488
     ViewSetting(
-        position: const Offset(170, 420),
+        position: const Offset(170, 380),
         size: const Size(480, 650)), // 2732x2048
     ViewSetting(
         position: const Offset(490, 170),
@@ -387,10 +369,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間A 線の間
     ViewSetting(
-        position: const Offset(660, 260),
+        position: const Offset(660, 200),
         size: const Size(400, 530)), // 2266x1488
     ViewSetting(
-        position: const Offset(780, 420),
+        position: const Offset(780, 380),
         size: const Size(480, 650)), // 2732x2048
     ViewSetting(
         position: const Offset(970, 170),
@@ -402,10 +384,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間B 線の上
     ViewSetting(
-        position: const Offset(1200, 260),
+        position: const Offset(1200, 200),
         size: const Size(400, 530)), // 2266x1488
     ViewSetting(
-        position: const Offset(1470, 420),
+        position: const Offset(1470, 380),
         size: const Size(480, 650)), // 2732x2048
     ViewSetting(
         position: const Offset(1460, 170),
@@ -417,10 +399,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間B 線の間
     ViewSetting(
-        position: const Offset(1710, 260),
+        position: const Offset(1710, 200),
         size: const Size(400, 530)), // 2266x1488
     ViewSetting(
-        position: const Offset(2100, 420),
+        position: const Offset(2100, 380),
         size: const Size(480, 650)), // 2732x2048
     ViewSetting(
         position: const Offset(1910, 170),
@@ -433,15 +415,13 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
 // =============================================================================================           PUZZLE
 // =============================================================================================           PUZZLE
 // =============================================================================================           PUZZLE
-// =============================================================================================           PUZZLE
-// =============================================================================================           PUZZLE
   [
     // 線と間A 線の上
     ViewSetting(
-        position: const Offset(150, 420),
+        position: const Offset(180, 1100),
         size: const Size(330, 330)), // 2266x1488
     ViewSetting(
-        position: const Offset(200, 570),
+        position: const Offset(200, 1500),
         size: const Size(400, 400)), // 2732x2048
     ViewSetting(
         position: const Offset(530, 950),
@@ -453,10 +433,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間A 線の間
     ViewSetting(
-        position: const Offset(660, 420),
+        position: const Offset(660, 1100),
         size: const Size(330, 330)), // 2266x1488
     ViewSetting(
-        position: const Offset(780, 570),
+        position: const Offset(780, 1500),
         size: const Size(400, 400)), // 2732x2048
     ViewSetting(
         position: const Offset(970, 950),
@@ -468,10 +448,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間B 線の上
     ViewSetting(
-        position: const Offset(1280, 420),
+        position: const Offset(1280, 1100),
         size: const Size(330, 330)), // 2266x1488
     ViewSetting(
-        position: const Offset(1560, 570),
+        position: const Offset(1560, 1500),
         size: const Size(400, 400)), // 2732x2048
     ViewSetting(
         position: const Offset(1510, 950),
@@ -483,10 +463,10 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   [
     // 線と間B 線の間
     ViewSetting(
-        position: const Offset(1800, 420),
+        position: const Offset(1750, 1100),
         size: const Size(330, 330)), // 2266x1488
     ViewSetting(
-        position: const Offset(2150, 570),
+        position: const Offset(2150, 1500),
         size: const Size(400, 400)), // 2732x2048
     ViewSetting(
         position: const Offset(1950, 950),
@@ -497,21 +477,14 @@ List<List<ViewSetting>> _menu2ButtonSetting = [
   ],
 ];
 
-ViewSetting getMenu2ButtonViewSetting(BuildContext context, int index) {
-  if (index > _menu2ButtonSetting.length) {
-    index = _menu2ButtonSetting.length - 1;
-  }
-  return getViewSetting(_menu2ButtonSetting[index], context);
-}
-
 List<List<ViewSetting>> _menu3ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
+        position: const Offset(80, 200),
         size: const Size(1000, 480)), // 2266x1488
     ViewSetting(
-        position: const Offset(70, 400),
+        position: const Offset(70, 350),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(400, 150),
@@ -523,10 +496,10 @@ List<List<ViewSetting>> _menu3ButtonSetting = [
   [
     // おんぷゲーム１
     ViewSetting(
-        position: const Offset(1170, 250),
+        position: const Offset(1170, 200),
         size: const Size(1000, 480)), // 2266x1488
     ViewSetting(
-        position: const Offset(1400, 400),
+        position: const Offset(1400, 350),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(1430, 150),
@@ -538,10 +511,10 @@ List<List<ViewSetting>> _menu3ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
+        position: const Offset(80, 750),
         size: const Size(1000, 480)), // 2266x1488
     ViewSetting(
-        position: const Offset(80, 400),
+        position: const Offset(80, 1000),
         size: const Size(1250, 560)), // 2732x2048
     ViewSetting(
         position: const Offset(400, 650),
@@ -553,10 +526,10 @@ List<List<ViewSetting>> _menu3ButtonSetting = [
   [
     // おんぷゲーム１
     ViewSetting(
-        position: const Offset(1170, 250),
+        position: const Offset(1170, 750),
         size: const Size(1000, 480)), // 2266x1488
     ViewSetting(
-        position: const Offset(1400, 400),
+        position: const Offset(1400, 1000),
         size: const Size(1250, 560)), // 2732x2048
     ViewSetting(
         position: const Offset(1420, 650),
@@ -567,21 +540,14 @@ List<List<ViewSetting>> _menu3ButtonSetting = [
   ],
 ];
 
-ViewSetting getMenu3ButtonViewSetting(BuildContext context, int index) {
-  if (index > _menu3ButtonSetting.length) {
-    index = _menu3ButtonSetting.length - 1;
-  }
-  return getViewSetting(_menu3ButtonSetting[index], context);
-}
-
 List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(80, 200),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(70, 400),
+        position: const Offset(70, 350),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(420, 150),
@@ -593,10 +559,10 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム１
     ViewSetting(
-        position: const Offset(1170, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(1170, 200),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(1400, 400),
+        position: const Offset(1400, 350),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(1430, 150),
@@ -608,10 +574,10 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(80, 700),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(70, 400),
+        position: const Offset(70, 1000),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(420, 600),
@@ -623,10 +589,10 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム１
     ViewSetting(
-        position: const Offset(1170, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(1170, 700),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(1400, 400),
+        position: const Offset(1400, 1000),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(1430, 600),
@@ -638,10 +604,10 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(80, 1200),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(70, 400),
+        position: const Offset(70, 1650),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(420, 1100),
@@ -653,10 +619,10 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   [
     // おんぷゲーム１
     ViewSetting(
-        position: const Offset(1170, 250),
-        size: const Size(1000, 480)), // 2266x1488
+        position: const Offset(1170, 1200),
+        size: const Size(1050, 420)), // 2266x1488
     ViewSetting(
-        position: const Offset(1400, 400),
+        position: const Offset(1400, 1650),
         size: const Size(1240, 570)), // 2732x2048
     ViewSetting(
         position: const Offset(1430, 1100),
@@ -667,21 +633,14 @@ List<List<ViewSetting>> _menu4ButtonSetting = [
   ],
 ];
 
-ViewSetting getMenu4ButtonViewSetting(BuildContext context, int index) {
-  if (index > _menu4ButtonSetting.length) {
-    index = _menu4ButtonSetting.length - 1;
-  }
-  return getViewSetting(_menu4ButtonSetting[index], context);
-}
-
 List<List<ViewSetting>> _menu5ButtonSetting = [
   [
     // おんぷゲーム２ 鍵盤
     ViewSetting(
-        position: const Offset(100, 250),
+        position: const Offset(80, 200),
         size: const Size(1000, 480)), // 2266x1488
     ViewSetting(
-        position: const Offset(80, 400),
+        position: const Offset(80, 320),
         size: const Size(1250, 560)), // 2732x2048
     ViewSetting(
         position: const Offset(420, 150),
@@ -706,6 +665,41 @@ List<List<ViewSetting>> _menu5ButtonSetting = [
         size: const Size(550, 260)), // 1334x750
   ],
 ];
+
+ViewSetting getDoremiToButtonViewSetting(BuildContext context, int index) {
+  if (index > _doremiToButtonSetting.length) {
+    index = _doremiToButtonSetting.length - 1;
+  }
+  return getViewSetting(_doremiToButtonSetting[index], context);
+}
+
+ViewSetting getDoremiHeButtonViewSetting(BuildContext context, int index) {
+  if (index > _doremiHeButtonSetting.length) {
+    index = _doremiHeButtonSetting.length - 1;
+  }
+  return getViewSetting(_doremiHeButtonSetting[index], context);
+}
+
+ViewSetting getMenu2ButtonViewSetting(BuildContext context, int index) {
+  if (index > _menu2ButtonSetting.length) {
+    index = _menu2ButtonSetting.length - 1;
+  }
+  return getViewSetting(_menu2ButtonSetting[index], context);
+}
+
+ViewSetting getMenu3ButtonViewSetting(BuildContext context, int index) {
+  if (index > _menu3ButtonSetting.length) {
+    index = _menu3ButtonSetting.length - 1;
+  }
+  return getViewSetting(_menu3ButtonSetting[index], context);
+}
+
+ViewSetting getMenu4ButtonViewSetting(BuildContext context, int index) {
+  if (index > _menu4ButtonSetting.length) {
+    index = _menu4ButtonSetting.length - 1;
+  }
+  return getViewSetting(_menu4ButtonSetting[index], context);
+}
 
 ViewSetting getMenu5ButtonViewSetting(BuildContext context, int index) {
   if (index > _menu5ButtonSetting.length) {

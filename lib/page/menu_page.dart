@@ -244,8 +244,6 @@ class _MenuParts1 extends StatelessWidget {
 // ==================================================================            doremi to
 // ==================================================================            doremi to
 // ==================================================================            doremi to
-// ==================================================================            doremi to
-// ==================================================================            doremi to
           MenuButton(
             onTap: () async {
               await globalData.setEnv('Do');
@@ -453,7 +451,7 @@ class _MenuParts3 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpu2';
+              String nextPageRoute = '/onpuC_space';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
@@ -461,15 +459,18 @@ class _MenuParts3 extends ConsumerWidget {
             buttonSize: menu3Button1Setting.size,
           ),
           MenuButton(
-            onTap: () {},
+            onTap: () {
+              String nextPageRoute = '/onpuC';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
             position: menu3Button2Setting.position,
             buttonSize: menu3Button2Setting.size,
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpu2_ken';
+              String nextPageRoute = '/onpuC_space_he';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
-              ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button3Setting.position,
@@ -477,9 +478,8 @@ class _MenuParts3 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpu1';
+              String nextPageRoute = '/onpuC_he';
               ref.read(onpu1PageNotifierProvider.notifier).reset();
-              ref.read(onpu1PageNotifierProvider.notifier).init();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button4Setting.position,
@@ -520,7 +520,7 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC_space';
+              String nextPageRoute = '/onpu2_ken';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
@@ -529,7 +529,7 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC';
+              String nextPageRoute = '/onpu2_ken_he';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
@@ -538,8 +538,8 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC_space';
-              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              String nextPageRoute = '/onpu1';
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button3Setting.position,
@@ -547,8 +547,8 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC';
-              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              String nextPageRoute = '/onpu1_he';
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button4Setting.position,
@@ -556,7 +556,7 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC_space';
+              String nextPageRoute = '/onpu2';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
@@ -565,7 +565,7 @@ class _MenuParts4 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuC';
+              String nextPageRoute = '/onpu2_he';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
@@ -603,7 +603,7 @@ class _MenuParts5 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpu2_ken';
+              String nextPageRoute = '/quiz';
               ref.read(onpu2PageNotifierProvider.notifier).reset();
               ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
@@ -612,12 +612,7 @@ class _MenuParts5 extends ConsumerWidget {
             buttonSize: menu5Button1Setting.size,
           ),
           MenuButton(
-            onTap: () {
-              String nextPageRoute = '/onpu1';
-              ref.read(onpu1PageNotifierProvider.notifier).reset();
-              ref.read(onpu1PageNotifierProvider.notifier).init();
-              Navigator.of(context).pushNamed(nextPageRoute);
-            },
+            onTap: () {},
             position: menu5Button2Setting.position,
             buttonSize: menu5Button2Setting.size,
           ),

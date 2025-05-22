@@ -11,7 +11,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../config/flavor_config.dart';
 
 /// シールをはりましょう 画面
-class StickerPage extends ConsumerWidget {
+class StickerPage extends ConsumerStatefulWidget {
   final int level;
   final int soundNo;
   const StickerPage({
@@ -21,7 +21,29 @@ class StickerPage extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<StickerPage> createState() => _StickerPageState();
+}
+
+class _StickerPageState extends ConsumerState<StickerPage> {
+  late final AudioPlayer nextAudioPlayer;
+  late final AudioPlayer drawAudioPlayer;
+
+  @override
+  void initState() {
+    super.initState();
+    nextAudioPlayer = AudioPlayer();
+    drawAudioPlayer = AudioPlayer();
+  }
+
+  @override
+  void dispose() {
+    nextAudioPlayer.dispose();
+    drawAudioPlayer.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final isCompleted = ref.watch(
         stickerPageStateNotifierProvider.select((state) => state.isCompleted));
     final stateNotifier = ref.read(stickerPageStateNotifierProvider.notifier);
@@ -29,9 +51,11 @@ class StickerPage extends ConsumerWidget {
     final screenSize = getScreenSize(context);
     final folder = getSizeFolderName(context);
     final StickerViewSetting stickerTargetSetting =
-        getStickerTargetViewSetting(context, soundNo, level);
+        getStickerTargetViewSetting(context, widget.soundNo, widget.level);
     final List<Offset> stickerInitOffsets =
         getStickerInitSetting(context, getStickerNum());
+    // AudioPlayers are now managed in state
+
     return Scaffold(
         body: Center(
       child: SizedBox(
@@ -87,20 +111,13 @@ class StickerPage extends ConsumerWidget {
                           .reset();
                       Navigator.of(context)
                           .pushReplacementNamed(setting.nextPageRoute);
-                      AudioPlayer nextAudioPlayer = AudioPlayer();
                       nextAudioPlayer.setAsset('assets/sounds/004.mp3');
                       nextAudioPlayer.play();
 
-                      if (setting.audioPlayer != null) {
-                        if (setting.nextPageRoute == '/draw') {
-                          setting.audioPlayer!
-                              .setAsset('assets/sounds/bgm4.mp3');
-                          setting.audioPlayer!
-                              .play();
-                        } else {
-                          setting.audioPlayer!.stop();
-                        }
-                      }
+                      // if (setting.nextPageRoute == '/draw') {
+                      //   drawAudioPlayer.setAsset('assets/sounds/bgm4.mp3');
+                      //   drawAudioPlayer.play();
+                      // }
                     },
                     imageName: setting.completedImageName,
                     nextButtonImageName: setting.nextButtonImageName,

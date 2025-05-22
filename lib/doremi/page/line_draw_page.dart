@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../config/flavor_config.dart';
 
-class LineDrawPage extends ConsumerWidget {
+class LineDrawPage extends ConsumerStatefulWidget {
   final String imageName;
   final String nextPageRoute;
   final int soundNo;
@@ -25,14 +25,34 @@ class LineDrawPage extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<LineDrawPage> createState() => _LineDrawPageState();
+}
+
+class _LineDrawPageState extends ConsumerState<LineDrawPage> {
+  late final AudioPlayer nextAudioPlayer;
+
+  @override
+  void initState() {
+    super.initState();
+    nextAudioPlayer = AudioPlayer();
+  }
+
+  @override
+  void dispose() {
+    nextAudioPlayer.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final isCompleted = ref.watch(
         lineDrawPageStateNotifierProvider.select((state) => state.isCompleted));
 
     final screenSize = getScreenSize(context);
     final folder = getSizeFolderName(context);
+
     LineDrawTargetViewSetting drawTargetSetting =
-        getDrawViewSetting(context, soundNo);
+        getDrawViewSetting(context, widget.soundNo);
     return Scaffold(
         body: Center(
       child: SizedBox(
@@ -47,7 +67,8 @@ class LineDrawPage extends ConsumerWidget {
         child: Stack(
           children: [
             Background(
-                name: '${FlavorConfig.assetPath}/images/$folder/$imageName',
+                name:
+                    '${FlavorConfig.assetPath}/images/$folder/${widget.imageName}',
                 width: screenSize.width,
                 height: screenSize.height),
             ...drawTargetSetting.targets.map(
@@ -71,40 +92,29 @@ class LineDrawPage extends ConsumerWidget {
               onEnd: () {
                 ref
                     .read(lineDrawPageStateNotifierProvider.notifier)
-                    .checkPoints(context, screenSize, soundNo);
+                    .checkPoints(context, screenSize, widget.soundNo);
               },
               onInit: () {
                 ref
                     .read(lineDrawPageStateNotifierProvider.notifier)
-                    .init(context, soundNo);
+                    .init(context, widget.soundNo);
               },
               screenSize: screenSize,
-              soundNo: soundNo,
+              soundNo: widget.soundNo,
             ),
             isCompleted
                 ? Completed(
-                    onTap: () async {
+                    onTap: () {
                       ref
                           .read(lineDrawPageStateNotifierProvider.notifier)
                           .reset();
-                      if (audioPlayer != null) {
-                        audioPlayer!.stop();
-                      }
-                      AudioPlayer nextAudioPlayer = AudioPlayer();
 
-                      // if (nextAudioPlayer != null) {
-                      //   await nextAudioPlayer.stop();
-                      // }
-
-                       nextAudioPlayer.setAsset('assets/sounds/004.mp3');
-                       nextAudioPlayer.play();
-
-                      // await Future.delayed(const Duration(seconds: 1));
+                      nextAudioPlayer.setAsset('assets/sounds/004.mp3');
+                      nextAudioPlayer.play();
 
                       if (context.mounted) {
-                        // await nextAudioPlayer.stop();
                         Navigator.of(context)
-                            .pushReplacementNamed(nextPageRoute);
+                            .pushReplacementNamed(widget.nextPageRoute);
                       }
                     },
                     compledText: false,

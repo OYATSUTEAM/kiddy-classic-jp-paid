@@ -3,70 +3,8 @@ import 'dart:developer';
 import '../setting.dart';
 import 'package:flutter/material.dart';
 import '../widget/background.dart';
-//import 'package:audioplayers/audioplayers.dart';
 import 'package:just_audio/just_audio.dart';
 import '../config/flavor_config.dart';
-
-/*
-class LearnPage extends StatelessWidget {
-  final String imageName;
-  final String nextPageRoute;
-  final AudioPlayer? audioPlayer;
-
-  const LearnPage({
-    super.key,
-    required this.imageName,
-    required this.nextPageRoute,
-    this.audioPlayer,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final screenSize = getScreenSize(context);
-    final ViewSetting learnButtonSetting = getLearnButtonViewSetting(context);
-    final folder = getSizeFolderName(context);
-    return Center(
-      child: SizedBox(
-        width: screenSize.width,
-        height: screenSize.height,
-        /*decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.red,
-            width: 2,
-          ),
-        ),*/
-        child: Stack(
-          children: [
-            Background(
-                name: 'assets/images/$folder/$imageName',
-                width: screenSize.width,
-                height: screenSize.height),
-            Positioned(
-              left: learnButtonSetting.position.dx,
-              top: learnButtonSetting.position.dy,
-              width: learnButtonSetting.size.width,
-              height: learnButtonSetting.size.height,
-              child: GestureDetector(
-                onTap: () {
-                  if (audioPlayer != null) {
-                    audioPlayer!.stop();
-                  }
-                  Navigator.pushNamed(context, nextPageRoute);
-                },
-                child: Container(
-                  width: learnButtonSetting.size.width,
-                  height: learnButtonSetting.size.height,
-                  color: Colors.blue.withOpacity(0),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-*/
 
 class LearnPage extends StatefulWidget {
   final String imageName;
@@ -109,7 +47,6 @@ class _LearnPageState extends State<LearnPage> {
     _audioPlayer.play();
 
     // Wait for the full duration
-    await Future.delayed(const Duration(seconds: 12));
 
     if (mounted && context.mounted) {
       // await _audioPlayer.stop();

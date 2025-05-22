@@ -28,6 +28,7 @@ class LineSpaceAPageStateNotifier extends StateNotifier<LineSpaceAPageState> {
   int _targetCount = 0;
   //List<bool> _isCompleted = List.empty(growable: true);
   final _audioPlayer = AudioPlayer();
+  final errorAudioPlayer = AudioPlayer();
   final _completeAudioPlayer = AudioPlayer();
   List<Function> resetFuncs = List.empty(growable: true);
 
@@ -68,8 +69,8 @@ class LineSpaceAPageStateNotifier extends StateNotifier<LineSpaceAPageState> {
       // if (_audioPlayer != null) {
       //   await _audioPlayer.stop();
       // }
-      _audioPlayer.setAsset('assets/sounds/005_e.mp3');
-      _audioPlayer.play();
+      errorAudioPlayer.setAsset('assets/sounds/005_e.mp3');
+      errorAudioPlayer.play();
       // await Future.delayed(const Duration(seconds: 1));
       return;
     }

@@ -1,3 +1,5 @@
+import 'package:kiddy_classic/onpu/page/line_space_a_page.dart';
+
 import '../setting.dart';
 import 'package:flutter/material.dart';
 //import 'package:audioplayers/audioplayers.dart';
@@ -89,13 +91,13 @@ class TitlePage extends StatelessWidget {
 class TitlePage extends StatefulWidget {
   final String imageName;
   final String nextPageRoute;
-  final AudioPlayer? audioPlayer;
+  // final AudioPlayer? audioPlayer;
 
   const TitlePage({
     super.key,
     required this.imageName,
     required this.nextPageRoute,
-    this.audioPlayer,
+    // this.audioPlayer,
   });
 
   @override
@@ -103,6 +105,15 @@ class TitlePage extends StatefulWidget {
 }
 
 class _TitlePageState extends State<TitlePage> {
+  final backgroundAudioPlayer = AudioPlayer();
+  bool _isTapped = false;
+  @override
+  void dispose() {
+    backgroundAudioPlayer.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -118,18 +129,14 @@ class _TitlePageState extends State<TitlePage> {
             )),
         GestureDetector(
           onTap: () async {
-            if (widget.audioPlayer != null) {
-              // Stop any existing audio
-              // await widget.audioPlayer!.stop();
-              // Play 007.mp3
-               widget.audioPlayer!.setAsset('assets/sounds/007.mp3');
-               widget.audioPlayer!.play();
-              // Wait for 007.mp3 to complete (7 seconds)
-              await Future.delayed(const Duration(seconds: 7));
-              // Stop 007.mp3 before navigation
-               widget.audioPlayer!.stop();
-            }
-            
+            if (_isTapped) return;
+            setState(() {
+              _isTapped = true;
+            });
+            await backgroundAudioPlayer.setAsset('assets/sounds/007.mp3');
+            backgroundAudioPlayer.play();
+            await Future.delayed(const Duration(seconds: 7));
+
             if (mounted) {
               Navigator.of(context).pushReplacementNamed(widget.nextPageRoute);
             }

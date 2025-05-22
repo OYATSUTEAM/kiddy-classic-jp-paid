@@ -25,7 +25,7 @@ class StickerPageSetting {
   final String incorrectSoundName;
   final String completedSoundName;
   final int targetNum;
-  final AudioPlayer? audioPlayer;
+  // final AudioPlayer? audioPlayer;
 
   StickerPageSetting({
     required this.nextPageRoute,
@@ -37,7 +37,7 @@ class StickerPageSetting {
     this.correctSoundName = 'assets/sounds/002.mp3',
     this.incorrectSoundName = 'assets/sounds/005_e.mp3',
     this.completedSoundName = 'assets/sounds/003_g.mp3',
-    this.audioPlayer,
+    // this.audioPlayer,
   }) {
     this.stickerImageName =
         stickerImageName ?? '${FlavorConfig.assetPath}/images/Do/Seal.png';
@@ -72,17 +72,17 @@ class StickerPageStateNotifier extends StateNotifier<StickerPageState> {
         const Duration(milliseconds: 500),
         () async {
           state = StickerPageState(isCompleted: true);
-          if (_audioPlayer != null) {
-            await _audioPlayer.stop();
-          }
+          // if (_audioPlayer != null) {
+          //   await _audioPlayer.stop();
+          // }
 
           _audioPlayer.setAsset(setting.completedSoundName);
           _audioPlayer.play();
-          await Future.delayed(const Duration(seconds: 4));
+          // await Future.delayed(const Duration(seconds: 4));
 
-          if (mounted) {
-            await _audioPlayer.stop();
-          }
+          // if (mounted) {
+          //   await _audioPlayer.stop();
+          // }
         },
       );
     }

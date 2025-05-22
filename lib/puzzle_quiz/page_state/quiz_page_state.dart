@@ -22,6 +22,7 @@ class QuizPageState {
 class QuizPageStateNotifier extends StateNotifier<QuizPageState> {
   final _audioPlayer = AudioPlayer();
   final _quizAudioPlayer = AudioPlayer();
+  final _errorAudioPlayer = AudioPlayer();
   bool isInit = false;
   List<List<int>> correctIndexes = List.empty(growable: true);
   QuizPageStateNotifier()
@@ -113,8 +114,8 @@ class QuizPageStateNotifier extends StateNotifier<QuizPageState> {
         lap: state.lap,
       );
     } else {
-      _audioPlayer.setAsset('assets/sounds/005_e.mp3');
-      _audioPlayer.play();
+      _errorAudioPlayer.setAsset('assets/sounds/005_e.mp3');
+      _errorAudioPlayer.play();
     }
   }
 
