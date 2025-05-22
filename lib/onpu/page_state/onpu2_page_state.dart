@@ -50,7 +50,8 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
   }
 
   void start() {
-    _audioPlayer.setAsset(_keyType < 2 ? 'assets/sounds/car.mp3' : 'assets/sounds/001.mp3');
+    _audioPlayer.setAsset(
+        _keyType < 2 ? 'assets/sounds/car.mp3' : 'assets/sounds/001.mp3');
     _audioPlayer.play();
     state =
         Onpu2PageState(level: state.level, isStarted: true, isCompleted: false);
@@ -74,8 +75,8 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
       //   await _audioPlayer.stop();
       // }
 
-       _audioPlayer.setAsset('assets/sounds/002.mp3');
-       _audioPlayer.play();
+      _audioPlayer.setAsset('assets/sounds/002.mp3');
+      _audioPlayer.play();
 
       _correctCount++;
       nextLevel();
@@ -87,8 +88,8 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
       // if (_audioPlayer != null) {
       //   await _audioPlayer.stop();
       // }
-       _audioPlayer.setAsset('assets/sounds/005_e.mp3');
-       _audioPlayer.play();
+      _audioPlayer.setAsset('assets/sounds/005_e.mp3');
+      _audioPlayer.play();
 
       // if (mounted) {
       //   await _audioPlayer.stop();
@@ -120,7 +121,11 @@ class Onpu2PageStateNotifier extends StateNotifier<Onpu2PageState> {
     question = List.empty(growable: true);
     _targetCount = 0;
     _keyType = -1;
-    state = Onpu2PageState(level: 0, isStarted: false, isCompleted: false);
+    state = Onpu2PageState(
+      level: 0,
+      isStarted: false,
+      isCompleted: false,
+    );
   }
 }
 

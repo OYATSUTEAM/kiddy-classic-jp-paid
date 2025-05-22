@@ -6,9 +6,21 @@ import '../widget/flash_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Onpu1Page extends StatelessWidget {
+class Onpu1Page extends ConsumerStatefulWidget {
   final bool soundType;
   const Onpu1Page({super.key, required this.soundType});
+
+  @override
+  ConsumerState<Onpu1Page> createState() => _Onpu1PageState();
+}
+
+class _Onpu1PageState extends ConsumerState<Onpu1Page> {
+  @override
+  void dispose() {
+    ref.read(onpu1PageNotifierProvider.notifier).reset();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +38,7 @@ class Onpu1Page extends StatelessWidget {
         child: Stack(
           children: [
             _BackgroundPart(),
-            _FlashCardPart(soundType),
+            _FlashCardPart(widget.soundType),
             _AllCompletedPart(),
           ],
         ),
@@ -209,11 +221,38 @@ class _AllCompletedPart extends ConsumerWidget {
     Size size = getScreenSize(context);
 
     return isAllCompleted
-        ? Background(
-            name: getLastImageName(speedType, folderName),
-            width: size.width,
-            height: size.height,
-          )
+        ? GestureDetector(
+            onTap: () {
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
+              ref.read(onpu1PageNotifierProvider.notifier).init();
+              Navigator.of(context).pushReplacementNamed('/', arguments: 2);
+            },
+            child: Stack(children: [
+              Background(
+                name: getLastImageName(speedType, folderName),
+                width: size.width,
+                height: size.height,
+              )
+            ]))
         : SizedBox();
   }
 }
+
+
+
+// GestureDetector(
+//             onTap: () {
+//               ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
+//               ref.read(lineSpaceAPageNotifierProvider.notifier).init(type);
+//               Navigator.of(context).pushReplacementNamed('/', arguments: 2);
+//             },
+//             child: Stack(
+//               children: [
+//                 Container(color: Colors.white),
+//                 Background(
+//                   name: 'assets/images/$folder/end.png',
+//                   width: screenSize.width,
+//                   height: screenSize.height,
+//                 ),
+//               ],
+//             ))

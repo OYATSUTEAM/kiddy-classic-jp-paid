@@ -930,57 +930,57 @@ String getSoundButtonName(String folderName, int index, int level) {
 List<List<String>> soundSettings = [
   [
     // 第1画面
-    'sounds/quiz/004_Ob.mp3', // オーボエ
-    'sounds/quiz/003_Fl.mp3', // フルート
-    'sounds/quiz/002_Cl.mp3', // クラリネット
+    'assets/sounds/quiz/004_Ob.mp3', // オーボエ
+    'assets/sounds/quiz/003_Fl.mp3', // フルート
+    'assets/sounds/quiz/002_Cl.mp3', // クラリネット
   ],
   [
     // 第2画面
-    'sounds/quiz/005_Tp.mp3', // トランペット
-    'sounds/quiz/Sax.mp3', // サックス
-    'sounds/quiz/Tb.mp3', // トロンボーン
+    'assets/sounds/quiz/005_Tp.mp3', // トランペット
+    'assets/sounds/quiz/Sax.mp3', // サックス
+    'assets/sounds/quiz/Tb.mp3', // トロンボーン
   ],
   [
     // 第3画面
-    'sounds/quiz/EGt.mp3', // エレキギター
-    'sounds/quiz/Gt.mp3', // ギター
-    'sounds/quiz/006_Dr.mp3', // ドラム
+    'assets/sounds/quiz/EGt.mp3', // エレキギター
+    'assets/sounds/quiz/Gt.mp3', // ギター
+    'assets/sounds/quiz/006_Dr.mp3', // ドラム
   ],
   [
     // 第4画面
-    'sounds/quiz/001_Vl_b.mp3', // バイオリン
-    'sounds/quiz/Cb.mp3', // コントラバス
-    'sounds/quiz/007_Vc.mp3', // チェロ
+    'assets/sounds/quiz/001_Vl_b.mp3', // バイオリン
+    'assets/sounds/quiz/Cb.mp3', // コントラバス
+    'assets/sounds/quiz/007_Vc.mp3', // チェロ
   ],
   [
     // 第5画面
-    'sounds/quiz/Cast.mp3', // カスタネット
-    'sounds/quiz/Tri.mp3', // トライアングル
-    'sounds/quiz/Tamb.mp3', // タンバリン
+    'assets/sounds/quiz/Cast.mp3', // カスタネット
+    'assets/sounds/quiz/Tri.mp3', // トライアングル
+    'assets/sounds/quiz/Tamb.mp3', // タンバリン
   ],
   [
     // 第6画面
-    'sounds/quiz/009_Glock.mp3', // グロッケン
-    'sounds/quiz/Vib.mp3', // ヴィブラフォン
-    'sounds/quiz/Mar.mp3', // マリンバ
+    'assets/sounds/quiz/009_Glock.mp3', // グロッケン
+    'assets/sounds/quiz/Vib.mp3', // ヴィブラフォン
+    'assets/sounds/quiz/Mar.mp3', // マリンバ
   ],
   [
     // 第7画面
-    'sounds/quiz/011_Agogo.mp3', // アゴゴ
-    'sounds/quiz/Conga.mp3', // コンガ
-    'sounds/quiz/013_Claves.mp3', // クラベス
+    'assets/sounds/quiz/011_Agogo.mp3', // アゴゴ
+    'assets/sounds/quiz/Conga.mp3', // コンガ
+    'assets/sounds/quiz/013_Claves.mp3', // クラベス
   ],
   [
     // 第8画面
-    'sounds/quiz/015_Maracas.mp3', // マラカス
-    'sounds/quiz/012_Guiro.mp3', // ギロ
-    'sounds/quiz/014_Cowbell.mp3', // カウベル
+    'assets/sounds/quiz/015_Maracas.mp3', // マラカス
+    'assets/sounds/quiz/012_Guiro.mp3', // ギロ
+    'assets/sounds/quiz/014_Cowbell.mp3', // カウベル
   ],
   [
     // 第9画面
-    'sounds/quiz/008_Pf.mp3', // ピアノ
-    'sounds/quiz/Org.mp3', // パイプオルガン
-    'sounds/quiz/010_Koto.mp3', // 琴
+    'assets/sounds/quiz/008_Pf.mp3', // ピアノ
+    'assets/sounds/quiz/Org.mp3', // パイプオルガン
+    'assets/sounds/quiz/010_Koto.mp3', // 琴
   ],
 ];
 

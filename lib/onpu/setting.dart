@@ -153,7 +153,8 @@ List<FlashCardSetting> flashCardSettings = [
   FlashCardSetting(index: 4, imageName: "gakufu_so.png", soundIdx: 4),
   FlashCardSetting(index: 5, imageName: "gakufu_la.png", soundIdx: 5),
   FlashCardSetting(index: 6, imageName: "gakufu_ti.png", soundIdx: 6),
-  FlashCardSetting(index: 7, imageName: "gakufu_hdo.png", soundIdx: 0),
+  // FlashCardSetting(index: 7, imageName: "gakufu_hdo.png", soundIdx: 0),
+  FlashCardSetting(index: 7, imageName: "gakufu_hdo.png", soundIdx: 7),
 ];
 
 String getFlashCardImageName(String folderName, int soundIdx, bool folderType) {

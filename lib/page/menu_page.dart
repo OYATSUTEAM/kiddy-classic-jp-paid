@@ -4,6 +4,9 @@ import 'package:kiddy_classic/doremi/global.dart';
 import 'package:flutter/material.dart';
 import 'package:kiddy_classic/onpu/page_state/line_space_a_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/line_space_b_page_state.dart';
+import 'package:kiddy_classic/onpu/page_state/onpu1_page_state.dart';
+import 'package:kiddy_classic/onpu/page_state/onpu2_page_state.dart';
+import 'package:kiddy_classic/puzzle_quiz/page_state/quiz_page_state.dart';
 import '/setting.dart';
 import '/widget/background.dart';
 import '/widget/menu_button.dart';
@@ -89,8 +92,8 @@ class _MenuPageState extends State<MenuPage> {
                 _MenuParts3(widgetKey: _menuPart3Key),
                 _MenuParts4(widgetKey: _menuPart4Key),
                 _MenuParts5(widgetKey: _menuPart5Key),
-                _MenuParts6(widgetKey: _menuPart6Key),
-                _MenuParts7(widgetKey: _menuPart7Key),
+                // _MenuParts6(widgetKey: _menuPart6Key),
+                // _MenuParts7(widgetKey: _menuPart7Key),
               ],
             ),
           ),
@@ -120,27 +123,48 @@ class _MenuParts1 extends StatelessWidget {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 1);
-    ViewSetting doremiButton1Setting = getDoremiButtonViewSetting(context, 0);
-    ViewSetting doremiButton2Setting = getDoremiButtonViewSetting(context, 1);
-    ViewSetting doremiButton3Setting = getDoremiButtonViewSetting(context, 2);
-    ViewSetting doremiButton4Setting = getDoremiButtonViewSetting(context, 3);
-    ViewSetting doremiButton5Setting = getDoremiButtonViewSetting(context, 4);
-    ViewSetting doremiButton6Setting = getDoremiButtonViewSetting(context, 5);
-    ViewSetting doremiButton7Setting = getDoremiButtonViewSetting(context, 6);
-    ViewSetting doremiButton8Setting = getDoremiButtonViewSetting(context, 7);
-    // ViewSetting puzzleButton1Setting = getPuzzleButtonViewSetting(context, 0);
-    // ViewSetting puzzleButton2Setting = getPuzzleButtonViewSetting(context, 1);
-    // ViewSetting puzzleButton3Setting = getPuzzleButtonViewSetting(context, 2);
-    // ViewSetting puzzleButton4Setting = getPuzzleButtonViewSetting(context, 3);
+    ViewSetting doremiToButton1Setting =
+        getDoremiToButtonViewSetting(context, 0);
+    ViewSetting doremiToButton2Setting =
+        getDoremiToButtonViewSetting(context, 1);
+    ViewSetting doremiToButton3Setting =
+        getDoremiToButtonViewSetting(context, 2);
+    ViewSetting doremiToButton4Setting =
+        getDoremiToButtonViewSetting(context, 3);
+    ViewSetting doremiToButton5Setting =
+        getDoremiToButtonViewSetting(context, 4);
+    ViewSetting doremiToButton6Setting =
+        getDoremiToButtonViewSetting(context, 5);
+    ViewSetting doremiToButton7Setting =
+        getDoremiToButtonViewSetting(context, 6);
+    ViewSetting doremiToButton8Setting =
+        getDoremiToButtonViewSetting(context, 7);
+// doremi he
+    ViewSetting doremiHeButton1Setting =
+        getDoremiHeButtonViewSetting(context, 0);
+    ViewSetting doremiHeButton2Setting =
+        getDoremiHeButtonViewSetting(context, 1);
+    ViewSetting doremiHeButton3Setting =
+        getDoremiHeButtonViewSetting(context, 2);
+    ViewSetting doremiHeButton4Setting =
+        getDoremiHeButtonViewSetting(context, 3);
+    ViewSetting doremiHeButton5Setting =
+        getDoremiHeButtonViewSetting(context, 4);
+    ViewSetting doremiHeButton6Setting =
+        getDoremiHeButtonViewSetting(context, 5);
+    ViewSetting doremiHeButton7Setting =
+        getDoremiHeButtonViewSetting(context, 6);
+    ViewSetting doremiHeButton8Setting =
+        getDoremiHeButtonViewSetting(context, 7);
     return SizedBox(
       width: size.width,
-      height: size.height * 0.7,
+      height: size.height * 1,
       child: Stack(
         children: [
           Background(
             name: imageName,
             width: size.width,
-            height: size.height * 0.7,
+            height: size.height * 1,
           ),
           MenuButton(
             onTap: () async {
@@ -148,8 +172,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton1Setting.position,
-            buttonSize: doremiButton1Setting.size,
+            position: doremiToButton1Setting.position,
+            buttonSize: doremiToButton1Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -157,8 +181,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton2Setting.position,
-            buttonSize: doremiButton2Setting.size,
+            position: doremiToButton2Setting.position,
+            buttonSize: doremiToButton2Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -167,8 +191,8 @@ class _MenuParts1 extends StatelessWidget {
 
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton3Setting.position,
-            buttonSize: doremiButton3Setting.size,
+            position: doremiToButton3Setting.position,
+            buttonSize: doremiToButton3Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -176,8 +200,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton4Setting.position,
-            buttonSize: doremiButton4Setting.size,
+            position: doremiToButton4Setting.position,
+            buttonSize: doremiToButton4Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -185,8 +209,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton5Setting.position,
-            buttonSize: doremiButton5Setting.size,
+            position: doremiToButton5Setting.position,
+            buttonSize: doremiToButton5Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -194,8 +218,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton6Setting.position,
-            buttonSize: doremiButton6Setting.size,
+            position: doremiToButton6Setting.position,
+            buttonSize: doremiToButton6Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -204,8 +228,8 @@ class _MenuParts1 extends StatelessWidget {
 
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton7Setting.position,
-            buttonSize: doremiButton7Setting.size,
+            position: doremiToButton7Setting.position,
+            buttonSize: doremiToButton7Setting.size,
           ),
           MenuButton(
             onTap: () async {
@@ -213,8 +237,88 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
             },
-            position: doremiButton8Setting.position,
-            buttonSize: doremiButton8Setting.size,
+            position: doremiToButton8Setting.position,
+            buttonSize: doremiToButton8Setting.size,
+          ),
+// ==================================================================            doremi to
+// ==================================================================            doremi to
+// ==================================================================            doremi to
+// ==================================================================            doremi to
+// ==================================================================            doremi to
+// ==================================================================            doremi to
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Do');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton1Setting.position,
+            buttonSize: doremiHeButton1Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Re');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton2Setting.position,
+            buttonSize: doremiHeButton2Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Mi');
+              await globalData.setToHe('jaHeon');
+
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton3Setting.position,
+            buttonSize: doremiHeButton3Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Fa');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton4Setting.position,
+            buttonSize: doremiHeButton4Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('So');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton5Setting.position,
+            buttonSize: doremiHeButton5Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Ra');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton6Setting.position,
+            buttonSize: doremiHeButton6Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Si');
+              await globalData.setToHe('jaHeon');
+
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton7Setting.position,
+            buttonSize: doremiHeButton7Setting.size,
+          ),
+          MenuButton(
+            onTap: () async {
+              await globalData.setEnv('Do2');
+              await globalData.setToHe('jaHeon');
+              Navigator.of(context).pushNamed('/doremi');
+            },
+            position: doremiHeButton8Setting.position,
+            buttonSize: doremiHeButton8Setting.size,
           ),
         ],
       ),
@@ -222,14 +326,14 @@ class _MenuParts1 extends StatelessWidget {
   }
 }
 
-class _MenuParts2 extends StatelessWidget {
+class _MenuParts2 extends ConsumerWidget {
   final GlobalKey widgetKey;
   const _MenuParts2({
     Key? key,
     required this.widgetKey,
   }) : super(key: widgetKey);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 2);
@@ -237,16 +341,20 @@ class _MenuParts2 extends StatelessWidget {
     ViewSetting menu2Button2Setting = getMenu2ButtonViewSetting(context, 1);
     ViewSetting menu2Button3Setting = getMenu2ButtonViewSetting(context, 2);
     ViewSetting menu2Button4Setting = getMenu2ButtonViewSetting(context, 3);
+    ViewSetting menu2Button5Setting = getMenu2ButtonViewSetting(context, 4);
+    ViewSetting menu2Button6Setting = getMenu2ButtonViewSetting(context, 5);
+    ViewSetting menu2Button7Setting = getMenu2ButtonViewSetting(context, 6);
+    ViewSetting menu2Button8Setting = getMenu2ButtonViewSetting(context, 7);
 
     return SizedBox(
       width: size.width,
-      height: size.height * 0.7,
+      height: size.height * 1.1,
       child: Stack(
         children: [
           Background(
             name: imageName,
             width: size.width,
-            height: size.height * 0.7,
+            height: size.height * 1.1,
           ),
           MenuButton(
             onTap: () {
@@ -276,6 +384,43 @@ class _MenuParts2 extends StatelessWidget {
             position: menu2Button4Setting.position,
             buttonSize: menu2Button4Setting.size,
           ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuA';
+              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu2Button5Setting.position,
+            buttonSize: menu2Button5Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuA_space';
+              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu2Button6Setting.position,
+            buttonSize: menu2Button6Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuB';
+              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
+              int rand = Random().nextInt(2);
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu2Button7Setting.position,
+            buttonSize: menu2Button7Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuB_space';
+              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu2Button8Setting.position,
+            buttonSize: menu2Button8Setting.size,
+          ),
         ],
       ),
     );
@@ -298,37 +443,33 @@ class _MenuParts3 extends ConsumerWidget {
     ViewSetting menu3Button4Setting = getMenu3ButtonViewSetting(context, 3);
     return SizedBox(
       width: size.width,
-      height: size.height * 0.7,
+      height: size.height * 0.89,
       child: Stack(
         children: [
           Background(
             name: imageName,
             width: size.width,
-            height: size.height * 0.7,
+            height: size.height * 0.89,
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuA';
-              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
+              String nextPageRoute = '/onpu2';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button1Setting.position,
             buttonSize: menu3Button1Setting.size,
           ),
           MenuButton(
-            onTap: () {
-              String nextPageRoute = '/onpuA_space';
-              ref.read(lineSpaceAPageNotifierProvider.notifier).reset();
-              Navigator.of(context).pushNamed(nextPageRoute);
-            },
+            onTap: () {},
             position: menu3Button2Setting.position,
             buttonSize: menu3Button2Setting.size,
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuB';
-              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
-              int rand = Random().nextInt(2);
+              String nextPageRoute = '/onpu2_ken';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button3Setting.position,
@@ -336,8 +477,9 @@ class _MenuParts3 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
-              String nextPageRoute = '/onpuB_space';
-              ref.read(lineSpaceBPageNotifierProvider.notifier).reset();
+              String nextPageRoute = '/onpu1';
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
+              ref.read(onpu1PageNotifierProvider.notifier).init();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu3Button4Setting.position,
@@ -349,32 +491,37 @@ class _MenuParts3 extends ConsumerWidget {
   }
 }
 
-class _MenuParts4 extends StatelessWidget {
+class _MenuParts4 extends ConsumerWidget {
   final GlobalKey widgetKey;
   const _MenuParts4({
     Key? key,
     required this.widgetKey,
   }) : super(key: widgetKey);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 4);
     ViewSetting menu4Button1Setting = getMenu4ButtonViewSetting(context, 0);
     ViewSetting menu4Button2Setting = getMenu4ButtonViewSetting(context, 1);
+    ViewSetting menu4Button3Setting = getMenu4ButtonViewSetting(context, 2);
+    ViewSetting menu4Button4Setting = getMenu4ButtonViewSetting(context, 3);
+    ViewSetting menu4Button5Setting = getMenu4ButtonViewSetting(context, 4);
+    ViewSetting menu4Button6Setting = getMenu4ButtonViewSetting(context, 5);
     return SizedBox(
       width: size.width,
-      height: size.height * 0.6,
+      height: size.height * 1.21,
       child: Stack(
         children: [
           Background(
             name: imageName,
             width: size.width,
-            height: size.height * 0.6,
+            height: size.height * 1.21,
           ),
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuC_space';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button1Setting.position,
@@ -383,10 +530,47 @@ class _MenuParts4 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpuC';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu4Button2Setting.position,
             buttonSize: menu4Button2Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuC_space';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu4Button3Setting.position,
+            buttonSize: menu4Button3Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuC';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu4Button4Setting.position,
+            buttonSize: menu4Button4Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuC_space';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu4Button5Setting.position,
+            buttonSize: menu4Button5Setting.size,
+          ),
+          MenuButton(
+            onTap: () {
+              String nextPageRoute = '/onpuC';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              Navigator.of(context).pushNamed(nextPageRoute);
+            },
+            position: menu4Button6Setting.position,
+            buttonSize: menu4Button6Setting.size,
           ),
         ],
       ),
@@ -394,14 +578,14 @@ class _MenuParts4 extends StatelessWidget {
   }
 }
 
-class _MenuParts5 extends StatelessWidget {
+class _MenuParts5 extends ConsumerWidget {
   final GlobalKey widgetKey;
   const _MenuParts5({
     Key? key,
     required this.widgetKey,
   }) : super(key: widgetKey);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 5);
@@ -409,17 +593,19 @@ class _MenuParts5 extends StatelessWidget {
     ViewSetting menu5Button2Setting = getMenu5ButtonViewSetting(context, 1);
     return SizedBox(
       width: size.width,
-      height: size.height * 0.6,
+      height: size.height * 0.54,
       child: Stack(
         children: [
           Background(
             name: imageName,
             width: size.width,
-            height: size.height * 0.6,
+            height: size.height * 0.54,
           ),
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpu2_ken';
+              ref.read(onpu2PageNotifierProvider.notifier).reset();
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu5Button1Setting.position,
@@ -428,94 +614,12 @@ class _MenuParts5 extends StatelessWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/onpu1';
+              ref.read(onpu1PageNotifierProvider.notifier).reset();
+              ref.read(onpu1PageNotifierProvider.notifier).init();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu5Button2Setting.position,
             buttonSize: menu5Button2Setting.size,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _MenuParts6 extends StatelessWidget {
-  final GlobalKey widgetKey;
-  const _MenuParts6({
-    Key? key,
-    required this.widgetKey,
-  }) : super(key: widgetKey);
-  @override
-  Widget build(BuildContext context) {
-    Size size = getScreenSize(context);
-    String folder = getSizeFolderNameFromSize(size);
-    String imageName = getBackGroundImageName(folder, 6);
-    ViewSetting menu6Button1Setting = getMenu6ButtonViewSetting(context, 0);
-    ViewSetting menu6Button2Setting = getMenu6ButtonViewSetting(context, 1);
-    return SizedBox(
-      width: size.width,
-      height: size.height * 0.6,
-      child: Stack(
-        children: [
-          Background(
-            name: imageName,
-            width: size.width,
-            height: size.height * 0.6,
-          ),
-          MenuButton(
-            onTap: () {
-              String nextPageRoute = '/onpu2';
-              Navigator.of(context).pushNamed(nextPageRoute);
-            },
-            position: menu6Button1Setting.position,
-            buttonSize: menu6Button1Setting.size,
-          ),
-          MenuButton(
-            onTap: () {},
-            position: menu6Button2Setting.position,
-            buttonSize: menu6Button2Setting.size,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _MenuParts7 extends StatelessWidget {
-  final GlobalKey widgetKey;
-  const _MenuParts7({
-    Key? key,
-    required this.widgetKey,
-  }) : super(key: widgetKey);
-  @override
-  Widget build(BuildContext context) {
-    Size size = getScreenSize(context);
-    String folder = getSizeFolderNameFromSize(size);
-    String imageName = getBackGroundImageName(folder, 7);
-    ViewSetting menu7Button1Setting = getMenu7ButtonViewSetting(context, 0);
-    ViewSetting menu7Button2Setting = getMenu7ButtonViewSetting(context, 1);
-    return SizedBox(
-      width: size.width,
-      height: size.height * 0.6,
-      child: Stack(
-        children: [
-          Background(
-            name: imageName,
-            width: size.width,
-            height: size.height * 0.6,
-          ),
-          MenuButton(
-            onTap: () {
-              String nextPageRoute = '/quiz';
-              Navigator.of(context).pushNamed(nextPageRoute);
-            },
-            position: menu7Button1Setting.position,
-            buttonSize: menu7Button1Setting.size,
-          ),
-          MenuButton(
-            onTap: () {},
-            position: menu7Button2Setting.position,
-            buttonSize: menu7Button2Setting.size,
           ),
         ],
       ),

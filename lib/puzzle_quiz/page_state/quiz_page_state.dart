@@ -138,6 +138,8 @@ class QuizPageStateNotifier extends StateNotifier<QuizPageState> {
       level: 0,
       lap: 0,
     );
+    _audioPlayer.stop();
+    _quizAudioPlayer.stop();
   }
 }
 
