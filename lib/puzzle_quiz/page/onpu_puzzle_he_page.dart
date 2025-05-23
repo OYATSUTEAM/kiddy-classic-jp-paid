@@ -68,8 +68,9 @@ class _MainParts extends ConsumerWidget {
           )
         : Stack(
             children: [
-              Container(color: Colors.white, child: _GameParts(type)),
-              Container(color: Colors.white, child: _NextButtonPart(type)),
+              Container(color: Colors.white),
+              _GameParts(type),
+              _NextButtonPart(type),
             ],
           );
   }
