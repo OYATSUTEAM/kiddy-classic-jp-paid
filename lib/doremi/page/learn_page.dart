@@ -47,7 +47,7 @@ class _LearnPageState extends State<LearnPage> {
     _audioPlayer.play();
 
     // Wait for the full duration
-
+    await Future.delayed(Duration(seconds: 12));
     if (mounted && context.mounted) {
       // await _audioPlayer.stop();
       Navigator.of(context).pushReplacementNamed(widget.nextPageRoute);
