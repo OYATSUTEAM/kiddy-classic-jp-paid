@@ -2,6 +2,8 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:kiddy_classic/doremi/global.dart';
 import 'package:flutter/material.dart';
+import 'package:kiddy_classic/doremi/page_state/line_draw_page_state.dart';
+import 'package:kiddy_classic/doremi/page_state/sticker_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/line_space_a_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/line_space_b_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/onpu1_page_state.dart';
@@ -111,7 +113,7 @@ class CustomScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
-class _MenuParts1 extends StatelessWidget {
+class _MenuParts1 extends ConsumerWidget {
   final GlobalKey widgetKey;
   const _MenuParts1({
     Key? key,
@@ -119,7 +121,7 @@ class _MenuParts1 extends StatelessWidget {
   }) : super(key: widgetKey);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     Size size = getScreenSize(context);
     String folder = getSizeFolderNameFromSize(size);
     String imageName = getBackGroundImageName(folder, 1);
@@ -171,6 +173,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Do');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton1Setting.position,
             buttonSize: doremiToButton1Setting.size,
@@ -180,6 +184,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Re');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton2Setting.position,
             buttonSize: doremiToButton2Setting.size,
@@ -190,6 +196,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
 
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton3Setting.position,
             buttonSize: doremiToButton3Setting.size,
@@ -199,6 +207,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Fa');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton4Setting.position,
             buttonSize: doremiToButton4Setting.size,
@@ -208,6 +218,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('So');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton5Setting.position,
             buttonSize: doremiToButton5Setting.size,
@@ -217,6 +229,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Ra');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton6Setting.position,
             buttonSize: doremiToButton6Setting.size,
@@ -227,6 +241,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaToon');
 
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton7Setting.position,
             buttonSize: doremiToButton7Setting.size,
@@ -236,6 +252,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Do2');
               await globalData.setToHe('jaToon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiToButton8Setting.position,
             buttonSize: doremiToButton8Setting.size,
@@ -249,6 +267,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Do');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton1Setting.position,
             buttonSize: doremiHeButton1Setting.size,
@@ -258,6 +278,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Re');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton2Setting.position,
             buttonSize: doremiHeButton2Setting.size,
@@ -268,6 +290,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaHeon');
 
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton3Setting.position,
             buttonSize: doremiHeButton3Setting.size,
@@ -277,6 +301,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Fa');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton4Setting.position,
             buttonSize: doremiHeButton4Setting.size,
@@ -286,6 +312,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('So');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton5Setting.position,
             buttonSize: doremiHeButton5Setting.size,
@@ -295,6 +323,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Ra');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton6Setting.position,
             buttonSize: doremiHeButton6Setting.size,
@@ -305,6 +335,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setToHe('jaHeon');
 
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton7Setting.position,
             buttonSize: doremiHeButton7Setting.size,
@@ -314,6 +346,8 @@ class _MenuParts1 extends StatelessWidget {
               await globalData.setEnv('Do2');
               await globalData.setToHe('jaHeon');
               Navigator.of(context).pushNamed('/doremi');
+              ref.read(stickerPageStateNotifierProvider.notifier).reset();
+              ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
             },
             position: doremiHeButton8Setting.position,
             buttonSize: doremiHeButton8Setting.size,

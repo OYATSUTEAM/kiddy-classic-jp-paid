@@ -72,17 +72,9 @@ class StickerPageStateNotifier extends StateNotifier<StickerPageState> {
         const Duration(milliseconds: 500),
         () async {
           state = StickerPageState(isCompleted: true);
-          // if (_audioPlayer != null) {
-          //   await _audioPlayer.stop();
-          // }
 
           _audioPlayer.setAsset(setting.completedSoundName);
           _audioPlayer.play();
-          // await Future.delayed(const Duration(seconds: 4));
-
-          // if (mounted) {
-          //   await _audioPlayer.stop();
-          // }
         },
       );
     }

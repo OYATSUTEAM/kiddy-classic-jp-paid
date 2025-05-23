@@ -29,12 +29,11 @@ class LineDrawPage extends ConsumerStatefulWidget {
 }
 
 class _LineDrawPageState extends ConsumerState<LineDrawPage> {
-  late final AudioPlayer nextAudioPlayer;
+  final AudioPlayer nextAudioPlayer = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
-    nextAudioPlayer = AudioPlayer();
   }
 
   @override

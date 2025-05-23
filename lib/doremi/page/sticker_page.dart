@@ -25,14 +25,12 @@ class StickerPage extends ConsumerStatefulWidget {
 }
 
 class _StickerPageState extends ConsumerState<StickerPage> {
-  late final AudioPlayer nextAudioPlayer;
-  late final AudioPlayer drawAudioPlayer;
+  final AudioPlayer nextAudioPlayer = AudioPlayer();
+  final AudioPlayer drawAudioPlayer = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
-    nextAudioPlayer = AudioPlayer();
-    drawAudioPlayer = AudioPlayer();
   }
 
   @override
@@ -106,13 +104,13 @@ class _StickerPageState extends ConsumerState<StickerPage> {
             isCompleted
                 ? Completed(
                     onTap: () {
+                      nextAudioPlayer.setAsset('assets/sounds/004.mp3');
+                      nextAudioPlayer.play();
+
                       ref
                           .read(stickerPageStateNotifierProvider.notifier)
                           .reset();
-                      Navigator.of(context)
-                          .pushReplacementNamed(setting.nextPageRoute);
-                      nextAudioPlayer.setAsset('assets/sounds/004.mp3');
-                      nextAudioPlayer.play();
+                      Navigator.of(context).pushNamed(setting.nextPageRoute);
 
                       // if (setting.nextPageRoute == '/draw') {
                       //   drawAudioPlayer.setAsset('assets/sounds/bgm4.mp3');
