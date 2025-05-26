@@ -23,7 +23,7 @@ class MenuButton extends StatelessWidget {
           child: GestureDetector(
             onTap: onTap,
             child: Container(
-              color: Colors.black.withOpacity(0),
+              color: Colors.black.withOpacity(0.6),
               alignment: Alignment.center,
             ),
           ),

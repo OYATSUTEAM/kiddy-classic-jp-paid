@@ -37,6 +37,7 @@ class _StickerPageState extends ConsumerState<StickerPage> {
   void dispose() {
     nextAudioPlayer.dispose();
     drawAudioPlayer.dispose();
+    drawAudioPlayer.stop();
     super.dispose();
   }
 
@@ -116,6 +117,33 @@ class _StickerPageState extends ConsumerState<StickerPage> {
                       //   drawAudioPlayer.setAsset('assets/sounds/bgm4.mp3');
                       //   drawAudioPlayer.play();
                       // }
+                      if (setting.nextPageRoute == '/draw') {
+                        drawAudioPlayer.setAsset('assets/sounds/bgm4.mp3');
+                        drawAudioPlayer.play();
+
+                        // Wait for 40 seconds
+                        Future.delayed(Duration(seconds: 40), () async {
+                          const fadeDuration =
+                              Duration(seconds: 5); // fade out over 5 seconds
+                          final int steps = 50; // number of volume steps
+                          final double initialVolume =
+                              1.0; // assuming starting volume is max
+                          final double stepDurationSeconds =
+                              fadeDuration.inSeconds / steps;
+
+                          for (int i = 0; i <= steps; i++) {
+                            final double volume =
+                                initialVolume * (1 - i / steps);
+                            await Future.delayed(Duration(
+                                milliseconds:
+                                    (stepDurationSeconds * 1000).toInt()));
+                            await drawAudioPlayer.setVolume(volume);
+                          }
+
+                          // Optionally stop the player after fade out
+                          await drawAudioPlayer.stop();
+                        });
+                      }
                     },
                     imageName: setting.completedImageName,
                     nextButtonImageName: setting.nextButtonImageName,
