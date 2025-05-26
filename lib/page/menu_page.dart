@@ -638,8 +638,9 @@ class _MenuParts5 extends ConsumerWidget {
           MenuButton(
             onTap: () {
               String nextPageRoute = '/quiz';
-              ref.read(onpu2PageNotifierProvider.notifier).reset();
-              ref.read(onpu1PageNotifierProvider.notifier).reset();
+              // ref.read(onpu2PageNotifierProvider.notifier).reset();
+              ref.read(quizPageNotifierProvider.notifier).reset();
+              // ref.read(onpu1PageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed(nextPageRoute);
             },
             position: menu5Button1Setting.position,
