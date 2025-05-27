@@ -209,6 +209,7 @@ class OnpuPuzzleHePageStateNotifier
     _completedCount = 0;
     _isStart = false;
     _isPreStart = false;
+    _isBGMPlaying = false;
 
     _onpuStates = List.empty(growable: true);
     piecesInit = List.empty(growable: true);
@@ -216,7 +217,6 @@ class OnpuPuzzleHePageStateNotifier
     _audioPlayer.stop();
     _completeAudioPlayer.stop();
     _bgmAudioPlayer.stop();
-    _isBGMPlaying = false;
     state = OnpuPuzzleHePageHeState(
       isPreStarted: false,
       isStarted: false,
