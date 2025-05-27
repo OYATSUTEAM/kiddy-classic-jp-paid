@@ -210,6 +210,10 @@ class OnpuPuzzleHePageStateNotifier
     _onpuStates = List.empty(growable: true);
     piecesInit = List.empty(growable: true);
     pieceStates = List.empty(growable: true);
+    _audioPlayer.stop();
+    _completeAudioPlayer.stop();
+    _bgmAudioPlayer.stop();
+
     state = OnpuPuzzleHePageHeState(
       isPreStarted: false,
       isStarted: false,

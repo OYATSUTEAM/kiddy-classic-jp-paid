@@ -8,6 +8,9 @@ import 'package:kiddy_classic/onpu/page_state/line_space_a_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/line_space_b_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/onpu1_page_state.dart';
 import 'package:kiddy_classic/onpu/page_state/onpu2_page_state.dart';
+import 'package:kiddy_classic/puzzle_quiz/page_state/onpu_puzzle_he_page_state.dart';
+import 'package:kiddy_classic/puzzle_quiz/page_state/onpu_puzzle_page_state.dart';
+import 'package:kiddy_classic/puzzle_quiz/page_state/puzzle_page_state.dart';
 import 'package:kiddy_classic/puzzle_quiz/page_state/quiz_page_state.dart';
 import '/setting.dart';
 import '/widget/background.dart';
@@ -391,12 +394,18 @@ class _MenuParts2 extends ConsumerWidget {
           MenuButton(
             onTap: () {
               Navigator.of(context).pushNamed('/puzzle');
+              ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+              ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+              ref.read(puzzlePageNotifierProvider.notifier).reset();
             },
             position: menu2Button1Setting.position,
             buttonSize: menu2Button1Setting.size,
           ),
           MenuButton(
             onTap: () {
+              ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+              ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+              ref.read(puzzlePageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed('/puzzle_he');
             },
             position: menu2Button2Setting.position,
@@ -404,6 +413,9 @@ class _MenuParts2 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
+              ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+              ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+              ref.read(puzzlePageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed('/puzzle_onpu');
             },
             position: menu2Button3Setting.position,
@@ -411,6 +423,9 @@ class _MenuParts2 extends ConsumerWidget {
           ),
           MenuButton(
             onTap: () {
+              ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+              ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+              ref.read(puzzlePageNotifierProvider.notifier).reset();
               Navigator.of(context).pushNamed('/puzzle_kyufu');
             },
             position: menu2Button4Setting.position,

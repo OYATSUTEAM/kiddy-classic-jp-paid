@@ -73,8 +73,8 @@ class PuzzlePageStateNotifier extends StateNotifier<PuzzlePageState> {
   void bgmPlay() {
     if (!_isBGMPlaying) {
       // _bgmAudioPlayer.setReleaseMode(ReleaseMode.loop);
-      _bgmAudioPlayer.setAsset('assets/sounds/BGM_01.mp3' );
-      _bgmAudioPlayer.play(  );
+      _bgmAudioPlayer.setAsset('assets/sounds/BGM_01.mp3');
+      _bgmAudioPlayer.play();
       _isBGMPlaying = true;
     }
   }
@@ -107,6 +107,10 @@ class PuzzlePageStateNotifier extends StateNotifier<PuzzlePageState> {
     _completedCount = 0;
     _isCompleted = List.empty(growable: true);
     piecesInit = List.empty(growable: true);
+    _audioPlayer.stop();
+    _completeAudioPlayer.stop();
+    _bgmAudioPlayer.stop();
+
     state = PuzzlePageState(
       isStarted: false,
       isCompleted: false,

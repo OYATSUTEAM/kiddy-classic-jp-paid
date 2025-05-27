@@ -208,6 +208,9 @@ class OnpuPuzzlePageStateNotifier extends StateNotifier<OnpuPuzzlePageState> {
     _onpuStates = List.empty(growable: true);
     piecesInit = List.empty(growable: true);
     pieceStates = List.empty(growable: true);
+    _audioPlayer.stop();
+    _completeAudioPlayer.stop();
+    _bgmAudioPlayer.stop();
     state = OnpuPuzzlePageState(
       isPreStarted: false,
       isStarted: false,
