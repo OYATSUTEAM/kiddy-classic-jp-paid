@@ -5,8 +5,22 @@ import '../widget/background.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../widget/puzzle_button.dart';
 
-class QuizPage extends StatelessWidget {
+class QuizPage extends ConsumerStatefulWidget {
   const QuizPage({super.key});
+
+  @override
+  ConsumerState<QuizPage> createState() => _QuizPageState();
+}
+
+class _QuizPageState extends ConsumerState<QuizPage> {
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the state when the page is first loaded
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(quizPageNotifierProvider.notifier).reset();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +38,7 @@ class QuizPage extends StatelessWidget {
       child: SizedBox(
         width: screenSize.width,
         height: screenSize.height,
-        child: Consumer(
-          builder: (context, ref, child) {
-            // Initialize the state when the page is first loaded
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              ref.read(quizPageNotifierProvider.notifier).reset();
-            });
-            return _MainParts();
-          },
-        ),
+        child: _MainParts(),
       ),
     ));
   }

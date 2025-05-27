@@ -205,6 +205,10 @@ class OnpuPuzzlePageStateNotifier extends StateNotifier<OnpuPuzzlePageState> {
   void reset() {
     _targetCount = 0;
     _completedCount = 0;
+    _isStart = false;
+    _isPreStart = false;
+    _isBGMPlaying = false;
+
     _onpuStates = List.empty(growable: true);
     piecesInit = List.empty(growable: true);
     pieceStates = List.empty(growable: true);

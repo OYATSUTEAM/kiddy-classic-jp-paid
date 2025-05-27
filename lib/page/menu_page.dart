@@ -33,19 +33,19 @@ class _MenuPageState extends ConsumerState<MenuPage> {
   final GlobalKey _menuPart3Key = GlobalKey();
   final GlobalKey _menuPart4Key = GlobalKey();
   final GlobalKey _menuPart5Key = GlobalKey();
-  final GlobalKey _menuPart6Key = GlobalKey();
-  final GlobalKey _menuPart7Key = GlobalKey();
   @override
   void initState() {
     _scrollToPart(widget.part);
-    ref.read(stickerPageStateNotifierProvider.notifier).reset();
-    ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
-    ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
-    ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
-    ref.read(puzzlePageNotifierProvider.notifier).reset();
-    ref.read(onpu1PageNotifierProvider.notifier).reset();
-    ref.read(onpu2PageNotifierProvider.notifier).reset();
-    ref.read(quizPageNotifierProvider.notifier).reset();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(stickerPageStateNotifierProvider.notifier).reset();
+      ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
+      ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+      ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+      ref.read(puzzlePageNotifierProvider.notifier).reset();
+      ref.read(onpu1PageNotifierProvider.notifier).reset();
+      ref.read(onpu2PageNotifierProvider.notifier).reset();
+      ref.read(quizPageNotifierProvider.notifier).reset();
+    });
   }
 
   void _scrollToPart(int part) {
