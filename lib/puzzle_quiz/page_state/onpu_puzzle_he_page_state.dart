@@ -107,7 +107,7 @@ class OnpuPuzzleHePageStateNotifier
   void bgmPlay() {
     if (!_isBGMPlaying) {
       _bgmAudioPlayer.setAsset('assets/sounds/BGM_01.mp3');
-      // _bgmAudioPlayer.setReleaseMode(ReleaseMode.loop);
+      _bgmAudioPlayer.setLoopMode(LoopMode.all);
       _bgmAudioPlayer.play();
       _isBGMPlaying = true;
     }
