@@ -17,14 +17,14 @@ import '/widget/background.dart';
 import '/widget/menu_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MenuPage extends StatefulWidget {
+class MenuPage extends ConsumerStatefulWidget {
   const MenuPage({super.key, required this.part});
   final int part;
   @override
-  State<MenuPage> createState() => _MenuPageState();
+  ConsumerState<MenuPage> createState() => _MenuPageState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _MenuPageState extends ConsumerState<MenuPage> {
   final ScrollController _scrollController = ScrollController();
 
   // Define global keys for each menu part
@@ -38,6 +38,14 @@ class _MenuPageState extends State<MenuPage> {
   @override
   void initState() {
     _scrollToPart(widget.part);
+    ref.read(stickerPageStateNotifierProvider.notifier).reset();
+    ref.read(lineDrawPageStateNotifierProvider.notifier).reset();
+    ref.read(onpuPuzzleHePageNotifierProvider.notifier).reset();
+    ref.read(onpuPuzzlePageNotifierProvider.notifier).reset();
+    ref.read(puzzlePageNotifierProvider.notifier).reset();
+    ref.read(onpu1PageNotifierProvider.notifier).reset();
+    ref.read(onpu2PageNotifierProvider.notifier).reset();
+    ref.read(quizPageNotifierProvider.notifier).reset();
   }
 
   void _scrollToPart(int part) {
@@ -71,9 +79,7 @@ class _MenuPageState extends State<MenuPage> {
   }
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     Size size = getScreenSize(context);
     return
         // Padding(
