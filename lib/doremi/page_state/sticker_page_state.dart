@@ -57,6 +57,7 @@ class StickerPageSetting {
 
 class StickerPageStateNotifier extends StateNotifier<StickerPageState> {
   int _completedCount = 0;
+  AudioPlayer drawAudioPlayer = AudioPlayer();
   final _audioPlayer = AudioPlayer();
   StickerPageSetting setting = StickerPageSetting.defaultSetting();
 
@@ -80,9 +81,35 @@ class StickerPageStateNotifier extends StateNotifier<StickerPageState> {
     }
   }
 
+  void bgmPlay() {
+    drawAudioPlayer.stop(); // Stop any existing playback
+    drawAudioPlayer.setAsset('assets/sounds/bgm4.mp3');
+    drawAudioPlayer.setVolume(1.0); // Reset volume to full
+    drawAudioPlayer.play();
+  }
+
+  void bgmStop() {
+    const fadeDuration = Duration(seconds: 3);
+    final int steps = 50; // number of volume steps
+    final double initialVolume = 1.0; // assuming starting volume is max
+    final double stepDurationSeconds = fadeDuration.inSeconds / steps;
+
+    for (int i = 0; i <= steps; i++) {
+      final double volume = initialVolume * (1 - i / steps);
+      Future.delayed(
+          Duration(milliseconds: (stepDurationSeconds * 1000).toInt()));
+      drawAudioPlayer.setVolume(volume);
+    }
+
+    // Stop the player after fade out
+    drawAudioPlayer.stop();
+  }
+
   void reset() {
     _completedCount = 0;
     state = StickerPageState(isCompleted: false);
+    drawAudioPlayer.stop(); // Stop any playing audio
+    drawAudioPlayer.setVolume(1.0); // Reset volume
   }
 }
 

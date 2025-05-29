@@ -1,5 +1,6 @@
 //import 'package:audioplayers/audioplayers.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:kiddy_classic/doremi/page_state/sticker_page_state.dart';
 import '../page_state/line_draw_page_state.dart';
 import '../setting.dart';
 import '../widget/background.dart';
@@ -110,10 +111,11 @@ class _LineDrawPageState extends ConsumerState<LineDrawPage> {
 
                       nextAudioPlayer.setAsset('assets/sounds/004.mp3');
                       nextAudioPlayer.play();
-
+                      ref
+                          .read(stickerPageStateNotifierProvider.notifier)
+                          .bgmStop();
                       if (context.mounted) {
-                        Navigator.of(context)
-                            .pushReplacementNamed(widget.nextPageRoute);
+                        Navigator.of(context).pushNamed(widget.nextPageRoute);
                       }
                     },
                     compledText: false,
