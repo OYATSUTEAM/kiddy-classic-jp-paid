@@ -59,7 +59,8 @@ class _PuzzlePieceState extends State<PuzzlePiece> {
   @override
   void initState() {
     super.initState();
-
+    print(widget.imageName);
+    print('=========================================');
     left = widget.initialLeft;
     top = widget.initialTop;
     oldScreenSize = widget.screenSize;
@@ -93,6 +94,7 @@ class _PuzzlePieceState extends State<PuzzlePiece> {
       width: widget.pieceSize.width,
       height: widget.pieceSize.height,
       alignment: Alignment.center,
+      // color: Colors.grey,
       child: Image.asset(
         widget.imageName,
         width: widget.pieceSize.width,

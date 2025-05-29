@@ -285,31 +285,52 @@ List<List<Size>> _kyufuPuzzlePartSizes = [
     // 2732x2048
     Size(873, 403), // parts1
     Size(1244, 286), // parts2
-    Size(629, 1220), // parts3
+    Size(520, 1220), // parts3
     Size(780, 507), // parts4
     Size(581, 633), // parts5
     Size(633, 1428), // parts6
     Size(234, 254), // parts7
+    // Size(873, 403), // parts1
+    // Size(1244, 286), // parts2
+    // Size(629, 1220), // parts3
+    // Size(780, 507), // parts4
+    // Size(581, 633), // parts5
+    // Size(633, 1428), // parts6
+    // Size(234, 254), // parts7
   ],
   [
     // 2796x1290
     Size(506, 199), // parts1
     Size(683, 295), // parts2
-    Size(320, 739), // parts3
+    Size(225, 739), // parts3
     Size(416, 366), // parts4
     Size(331, 390), // parts5
     Size(309, 835), // parts6
     Size(129, 118), // parts7
+    // Size(506, 199), // parts1
+    // Size(683, 295), // parts2
+    // Size(320, 739), // parts3
+    // Size(416, 366), // parts4
+    // Size(331, 390), // parts5
+    // Size(309, 835), // parts6
+    // Size(129, 118), // parts7
   ],
   [
     // 1334x750
-    Size(288, 178), // parts1
-    Size(445, 178), // parts2
-    Size(224, 451), // parts3
-    Size(271, 267), // parts4
-    Size(225, 275), // parts5
-    Size(260, 521), // parts6
-    Size(72, 66), // parts7
+    Size(263, 122), // parts1
+    Size(377, 172), // parts2
+    Size(106, 451), // parts3
+    Size(217, 192), // parts4
+    Size(170, 214), // parts5
+    Size(176, 521), // parts6
+    Size(45, 48), // parts7
+    // Size(288, 178), // parts1
+    // Size(445, 178), // parts2
+    // Size(224, 451), // parts3
+    // Size(271, 267), // parts4
+    // Size(225, 275), // parts5
+    // Size(260, 521), // parts6
+    // Size(72, 66), // parts7
   ],
 ];
 
@@ -477,6 +498,7 @@ List<List<List<OnpuPuzzleSetting>>> _onpuPuzzleSettings = [
     [
       // 全音符
       OnpuPuzzleSetting(index: 1, offset: Offset(-105.5, -92.5)),
+      // OnpuPuzzleSetting(index: 1, offset: Offset(-50.5, -92.5)),
     ],
     [
       // 2分音符
@@ -613,16 +635,18 @@ List<OnpuPuzzleSetting> getOnpuPuzzleSetting(
 
 List<ViewSetting> _onpuPuzzleCorrectAreaSettings = [
   ViewSetting(
-      position: const Offset(947, 85),
-      size: const Size(985, 1320)), // 2266x1488
+      position: const Offset(957, 85),
+      size: const Size(975, 1320)), // 2266x1488
   ViewSetting(
-      position: const Offset(1085, 122),
-      size: const Size(1350, 1805)), // 2732x2048
+      position: const Offset(1095, 122),
+      size: const Size(1340, 1805)), // 2732x2048
   ViewSetting(
-      position: const Offset(1398, 100),
-      size: const Size(816, 1092)), // 2796x1290
+      position: const Offset(1408, 100),
+      size: const Size(806, 1092)), // 2796x1290
   ViewSetting(
-      position: const Offset(703, 45), size: const Size(495, 660)), // 1334x750
+      // position: const Offset(703, 45), size: const Size(495, 660)), // 1334x750
+      position: const Offset(703, 45),
+      size: const Size(495, 660)), // 1334x750
 ];
 
 ViewSetting getOnpuPuzzleCorrectAreaSetting(BuildContext context) {
@@ -812,6 +836,7 @@ List<List<OnpuPieceMargin>> _kyufuPartsMargin = [
   ],
   [
     // 1334x750
+
     OnpuPieceMargin(left: 30, top: 42, right: 30, bottom: 57), // parts1
     OnpuPieceMargin(left: 35, top: 17, right: 55, bottom: 5), // parts2
     OnpuPieceMargin(left: 47, top: 13, right: 87, bottom: 25), // parts3

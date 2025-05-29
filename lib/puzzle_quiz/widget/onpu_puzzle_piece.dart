@@ -97,12 +97,12 @@ class _OnpuPuzzlePieceState extends State<OnpuPuzzlePiece> {
       width: widget.pieceSize.width,
       height: widget.pieceSize.height,
       alignment: Alignment.center,
-      //color: Colors.green.withOpacity(0.5),
+      color: const Color.fromARGB(137, 158, 158, 158),
       child: Image.asset(
         widget.imageName,
         width: widget.pieceSize.width,
         height: widget.pieceSize.height,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     );
 

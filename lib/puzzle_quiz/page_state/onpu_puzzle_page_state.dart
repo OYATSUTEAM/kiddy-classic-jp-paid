@@ -232,7 +232,7 @@ class OnpuPuzzlePageStateNotifier extends StateNotifier<OnpuPuzzlePageState> {
     init(context, type);
     _audioPlayer.setAsset('assets/sounds/car.mp3');
     _audioPlayer.play();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       state = OnpuPuzzlePageState(
         isPreStarted: true,
         isStarted: true,
