@@ -110,7 +110,6 @@ class _TitlePageState extends State<TitlePage> {
   @override
   void dispose() {
     backgroundAudioPlayer.dispose();
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -133,7 +132,7 @@ class _TitlePageState extends State<TitlePage> {
             setState(() {
               _isTapped = true;
             });
-            await backgroundAudioPlayer.setAsset('assets/sounds/007.mp3');
+            backgroundAudioPlayer.setAsset('assets/sounds/007.mp3');
             backgroundAudioPlayer.play();
             await Future.delayed(const Duration(seconds: 7));
 
