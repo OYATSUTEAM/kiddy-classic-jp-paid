@@ -17,7 +17,7 @@ class Onpu1Page extends ConsumerStatefulWidget {
 class _Onpu1PageState extends ConsumerState<Onpu1Page> {
   @override
   void dispose() {
-    ref.read(onpu1PageNotifierProvider.notifier).reset();
+    // ref.read(onpu1PageNotifierProvider.notifier).reset();
     super.dispose();
   }
 
@@ -140,6 +140,7 @@ class _FlashCardPart2 extends ConsumerWidget {
     String imageName = isEnd
         ? getFlashCardImageName(folderName, imageIndex, soundType)
         : getFlashCardImageName(folderName, soundNo, soundType);
+    print('$imageName=======================');
     ViewSetting frashCardViewSetting = getFlashCardsViewSetting(context);
 
     return isCompleted

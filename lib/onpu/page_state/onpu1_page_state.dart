@@ -24,7 +24,8 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
   bool _speedType = true;
   List<bool> _isPushed = List.empty(growable: true);
   List<FlashCardSetting> frashCards = List.empty(growable: true);
-  List<int> soundIndexes = List.generate(7, (index) => index);
+  List<int> soundIndexes = List.generate(8, (index) => index);
+
   final _audioPlayer = AudioPlayer();
   final _audioPlayer2 = AudioPlayer();
   final _backgroundPlayer = AudioPlayer();
@@ -42,6 +43,7 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
             index: 0));
 
   void init() {
+    print(soundIndexes);
     _isPushed = List.filled(flashCardSettings.length, false);
     frashCards.clear();
     frashCards = [...flashCardSettings];
@@ -75,7 +77,7 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
           index: state.index);
     }
 
-    flash(generation: _flashGeneration);
+    flash('called from start=============');
   }
 
   List<FlashCardSetting> getFrashCards() {
@@ -108,22 +110,30 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
     if (state.index >= frashCards.length) {
       return;
     }
+
+    print('${frashCards[state.index].soundIdx}===============');
     if (frashCards[state.index].soundIdx == soundIndexes[state.level]) {
       if (state.isCompleted) return;
+      _audioPlayer.setAsset('assets/sounds/002.mp3');
+      _audioPlayer.play();
       state = Onpu1PageState(
           isStarted: true,
           isCompleted: true,
           isAllCompleted: false,
           level: state.level + 1,
-          index: 1);
+          index: 8);
+      // state = Onpu1PageState(
+      //     isStarted: true,
+      //     isCompleted: true,
+      //     isAllCompleted: false,
+      //     level: state.level + 1,
+      //     index: 1);
       // _isPushed = List.filled(flashCardSettings.length, false);
-      _audioPlayer.setAsset('assets/sounds/002.mp3');
-      _audioPlayer.play();
     } else {
       _errorAudioPlayer.setAsset('assets/sounds/OnpuGame1/005_e.mp3');
       _errorAudioPlayer.play();
     }
-    _isPushed[state.index] = true;
+    if (state.index < 8) _isPushed[state.index] = true;
   }
 
   bool getPushed(int idx) {
@@ -134,9 +144,6 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
   }
 
   void next() {
-    if (_isTransitioning) return;
-    _isTransitioning = true;
-    // int nextLevel = state.level + 1;
     _audioPlayer.setAsset('assets/sounds/next.mp3');
     _audioPlayer.play();
     if (state.level >= soundIndexes.length) {
@@ -150,16 +157,18 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
           isStarted: true,
           isCompleted: true,
           isAllCompleted: true,
-          // level: nextLevel,
           level: state.level,
           index: state.index);
       _isTransitioning = false;
       return;
     }
     if (state.isAllCompleted) {
-      _isTransitioning = false;
       return;
     }
+    if (!state.isCompleted) {
+      return;
+    }
+
     _isPushed = List.filled(flashCardSettings.length, false);
     frashCards = [...flashCardSettings];
     frashCards.shuffle();
@@ -172,23 +181,17 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
         isAllCompleted: false,
         level: state.level,
         index: 0);
-    if (state.isCompleted) {
-      _isTransitioning = false;
-      return;
-    }
-    flash(
-        onComplete: () {
-          _isTransitioning = false;
-        },
-        generation: _flashGeneration);
+
+    // if (_isTransitioning)
+    flash('called from next=============');
   }
 
   bool isEndFrash() {
     return state.level >= soundIndexes.length;
   }
 
-  void flash({VoidCallback? onComplete, int? generation}) {
-    final int currentGeneration = generation ?? _flashGeneration;
+  void flash(String calledFrom) {
+    final int currentGeneration = ++_flashGeneration;
     final int millisec = 1500;
     final int millisec2 = 3000;
     Future.delayed(Duration(milliseconds: _speedType ? millisec : millisec2),
@@ -197,11 +200,11 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
         return;
       }
       if (state.isAllCompleted) {
-        if (onComplete != null) onComplete();
+        _isTransitioning = true;
         return;
       }
       if (state.isCompleted) {
-        if (onComplete != null) onComplete();
+        _isTransitioning = true;
         return;
       }
       int index = state.index;
@@ -215,19 +218,17 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
         _audioPlayer2.setAsset('assets/sounds/OnpuGame1/008.mp3');
         _audioPlayer2.play();
       }
-
       state = Onpu1PageState(
           isStarted: true,
           isCompleted: complete,
           isAllCompleted: false,
           level: level,
           index: index);
-      // index: index);
+      _isTransitioning = false;
 
+      print(calledFrom);
       if (!complete) {
-        flash(onComplete: onComplete, generation: currentGeneration);
-      } else {
-        if (onComplete != null) onComplete();
+        flash(calledFrom);
       }
     });
   }
@@ -236,9 +237,13 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
     _flashGeneration++;
     _isPushed = List.empty(growable: true);
     _isPushed.clear();
+    print('_backgroundPlayer is stopped');
     _backgroundPlayer.stop();
+    print('_audioPlayer  is stopped');
     _audioPlayer.stop();
+    print('_audioPlayer2  is stopped');
     _audioPlayer2.stop();
+    print('_completedAudioPlayer is stopped');
     _completedAudioPlayer.stop();
     frashCards.clear();
     state = Onpu1PageState(
