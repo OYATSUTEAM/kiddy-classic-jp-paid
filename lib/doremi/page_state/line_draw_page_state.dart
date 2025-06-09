@@ -127,13 +127,13 @@ class LineDrawPageStateNotifier extends StateNotifier<LineDrawPageState> {
           }
         }
 
-        print('$pointsNearCenter================');
-        print('(maxX - minX) > size * 0.4 : ${(maxX - minX) > size * 0.4}');
-        print(
-            '(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() <size * 0.5 : ${(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() < size * 0.5}');
+        // print('$pointsNearCenter================');
+        // print('(maxX - minX) > size * 0.4 : ${(maxX - minX) > size * 0.4}');
+        // print(
+        //     '(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() <size * 0.5 : ${(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() < size * 0.5}');
 
         bool isCurrentLineHorizontal =
-            pointsNearCenter >= 34 && // Need enough points near center
+            pointsNearCenter >= 22 && // Need enough points near center
                 (maxX - minX) > size * 0.4;
 
         //  && // Need to span enough width
@@ -143,11 +143,11 @@ class LineDrawPageStateNotifier extends StateNotifier<LineDrawPageState> {
         //     size * 0.5; // Line should end near target
         if (isCurrentLineCircle) {
           _isCircle[i] = true;
-          print('Target $i: Circle detected');
+          print('Target $i: Circle detected================');
         }
         if (isCurrentLineHorizontal) {
           _isHorizontalLine[i] = true;
-          print('Target $i: Horizontal line detected');
+          print('Target $i: Horizontal line detected==========');
         }
 
         // Check if both conditions are met for this target
