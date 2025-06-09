@@ -59,8 +59,6 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
     _audioPlayer.play();
     _backgroundPlayer.setAsset('assets/sounds/back.mp3');
     _backgroundPlayer.play();
-    // _audioPlayer2.setAsset('assets/sounds/OnpuGame1/008.mp3');
-    // _audioPlayer2.play();
     if (state.index != 7) {
       state = Onpu1PageState(
           isStarted: true,
@@ -114,14 +112,11 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
       if (state.isCompleted) return;
       state = Onpu1PageState(
           isStarted: true,
-          // isCompleted: false,
           isCompleted: true,
           isAllCompleted: false,
-          // level: state.level,
-          level: state.level,
-          // index: 7);/
-          // index: state.index);
-          index: 0);
+          level: state.level + 1,
+          index: 1);
+      // _isPushed = List.filled(flashCardSettings.length, false);
       _audioPlayer.setAsset('assets/sounds/002.mp3');
       _audioPlayer.play();
     } else {
@@ -141,17 +136,10 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
   void next() {
     if (_isTransitioning) return;
     _isTransitioning = true;
-    int nextLevel = state.level + 1;
-    // state = Onpu1PageState(
-    //     isStarted: true,
-    //     isCompleted: false,
-    //     isAllCompleted: false,
-    //     level: nextLevel,
-    //     index: 0);
-
+    // int nextLevel = state.level + 1;
     _audioPlayer.setAsset('assets/sounds/next.mp3');
     _audioPlayer.play();
-    if (nextLevel >= soundIndexes.length) {
+    if (state.level >= soundIndexes.length) {
       Future.delayed(Duration(milliseconds: 700), () {
         _completedAudioPlayer.setAsset(_speedType
             ? 'assets/sounds/OnpuGame1/006_dog.mp3'
@@ -162,7 +150,8 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
           isStarted: true,
           isCompleted: true,
           isAllCompleted: true,
-          level: nextLevel,
+          // level: nextLevel,
+          level: state.level,
           index: state.index);
       _isTransitioning = false;
       return;
@@ -171,18 +160,18 @@ class Onpu1PageStateNotifier extends StateNotifier<Onpu1PageState> {
       _isTransitioning = false;
       return;
     }
+    _isPushed = List.filled(flashCardSettings.length, false);
+    frashCards = [...flashCardSettings];
+    frashCards.shuffle();
+    _audioPlayer2.setAsset('assets/sounds/OnpuGame1/008.mp3');
+    _audioPlayer2.play();
+
     state = Onpu1PageState(
         isStarted: true,
         isCompleted: false,
         isAllCompleted: false,
-        level: nextLevel,
+        level: state.level,
         index: 0);
-    _audioPlayer2.setAsset('assets/sounds/OnpuGame1/008.mp3');
-    _audioPlayer2.play();
-    _isPushed = List.filled(flashCardSettings.length, false);
-    frashCards = [...flashCardSettings];
-    frashCards.shuffle();
-
     if (state.isCompleted) {
       _isTransitioning = false;
       return;
