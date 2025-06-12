@@ -103,8 +103,8 @@ class LineDrawPageStateNotifier extends StateNotifier<LineDrawPageState> {
 
         // Check if current line is a circle
         bool isCurrentLineCircle =
-            avgDistance > size * 0.2 && // Not too close to center
-                avgDistance < size * 0.8 && // Not too far from center
+            avgDistance > size * 0.1 && // Not too close to center
+                avgDistance < size * 0.7 && // Not too far from center
                 (maxDistance - minDistance) < size * 0.4 && // Circle is round
                 _points[last].length >= 8; // Enough points for circle
 
@@ -131,9 +131,9 @@ class LineDrawPageStateNotifier extends StateNotifier<LineDrawPageState> {
         // print('(maxX - minX) > size * 0.4 : ${(maxX - minX) > size * 0.4}');
         // print(
         //     '(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() <size * 0.5 : ${(minX - targetPos.dx).abs() < size * 0.5 && (maxX - targetPos.dx).abs() < size * 0.5}');
-
+        print(pointsNearCenter);
         bool isCurrentLineHorizontal =
-            pointsNearCenter >= 22 && // Need enough points near center
+            pointsNearCenter >= 30 && // Need enough points near center
                 (maxX - minX) > size * 0.4;
 
         //  && // Need to span enough width
