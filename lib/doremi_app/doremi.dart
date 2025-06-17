@@ -17,7 +17,7 @@ class Doremi extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Settings setting = selectEnv();
-    Size screenSize = getScreenSize(context);
+    // Size screenSize = getScreenSize(context);
 
     return MaterialApp(
       title: 'どれみとあそぼ',

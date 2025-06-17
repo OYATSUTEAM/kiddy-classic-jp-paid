@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kiddy_classic/setting.dart';
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // 共通
@@ -57,11 +58,11 @@ String getSizeFolderNameFromSize(Size size) {
 
 final List<Size> _imageSizes = [
   // タブレットサイズ
-  Size(2266, 1488),
-  Size(2732, 2048),
+  const Size(2266, 1488),
+  const Size(2732, 2048),
   // スマホサイズ
-  Size(2796, 1290),
-  Size(1334, 750),
+  const Size(2796, 1290),
+  const Size(1334, 750),
 ];
 
 final List<String> _folderNames = [
@@ -159,22 +160,22 @@ ViewSetting getPieceViewSetting(BuildContext context, int index) {
 List<ViewSetting> _puzzleStartButtonViewSettings = [
   ViewSetting(
     //2266x1488
-    position: Offset(200, 1050),
+    position: const Offset(200, 1050),
     size: const Size(539, 231),
   ),
   ViewSetting(
     //2732x2048
-    position: Offset(100, 1400),
+    position: const Offset(100, 1400),
     size: const Size(778, 302),
   ),
   ViewSetting(
     //2796x1290
-    position: Offset(400, 850),
+    position: const Offset(400, 850),
     size: const Size(471, 218),
   ),
   ViewSetting(
     //1334x750
-    position: Offset(100, 520),
+    position: const Offset(100, 520),
     size: const Size(272, 116),
   ),
 ];
@@ -186,22 +187,22 @@ ViewSetting getPuzzleStartButtonViewSetting(BuildContext context) {
 List<ViewSetting> _puzzleNextButtonViewSettings = [
   ViewSetting(
     //2266x1488
-    position: Offset(200, 1250),
+    position: const Offset(200, 1250),
     size: const Size(539, 197),
   ),
   ViewSetting(
     //2732x2048
-    position: Offset(100, 1650),
+    position: const Offset(100, 1650),
     size: const Size(778, 303),
   ),
   ViewSetting(
     //2796x1290
-    position: Offset(400, 1080),
+    position: const Offset(400, 1080),
     size: const Size(461, 141),
   ),
   ViewSetting(
     //1334x750
-    position: Offset(100, 620),
+    position: const Offset(100, 620),
     size: const Size(272, 107),
   ),
 ];
@@ -239,57 +240,57 @@ int getOnpuPuzzlePartNum(bool type) {
 List<List<Size>> _onpuPuzzlePartSizes = [
   [
     // 2266x1488
-    Size(96, 881), // parts1
-    Size(470, 326), // parts2
-    Size(450, 363), // parts3
-    Size(180, 161), // parts4
-    Size(399, 874), // parts5
+    const Size(110, 680), // parts1
+    const Size(320, 220), // parts2
+    const Size(300, 220), // parts3
+    const Size(80, 70), // parts4
+    const Size(240, 680), // parts5
   ],
   [
     // 2732x2048
-    Size(175, 1268), // parts1
-    Size(663, 455), // parts2
-    Size(663, 547), // parts3
-    Size(187, 183), // parts4
-    Size(518, 1268), // parts5
+    const Size(160, 1100), // parts1
+    const Size(440, 320), // parts2
+    const Size(440, 350), // parts3
+    const Size(140, 140), // parts4
+    const Size(420, 1268), // parts5
   ],
   [
     // 2796x1290
-    Size(81, 739), // parts1
-    Size(350, 255), // parts2
-    Size(358, 313), // parts3
-    Size(104, 102), // parts4
-    Size(327, 707), // parts5
+    const Size(81, 739), // parts1
+    const Size(350, 255), // parts2
+    const Size(358, 313), // parts3
+    const Size(104, 102), // parts4
+    const Size(327, 707), // parts5
   ],
   [
     // 1334x750
-    Size(49, 445), // parts1
-    Size(211, 185), // parts2
-    Size(216, 191), // parts3
-    Size(70, 66), // parts4
-    Size(187, 415), // parts5
+    const Size(49, 445), // parts1
+    const Size(211, 185), // parts2
+    const Size(216, 191), // parts3
+    const Size(70, 66), // parts4
+    const Size(187, 415), // parts5
   ],
 ];
 List<List<Size>> _kyufuPuzzlePartSizes = [
   [
     // 2266x1488
-    Size(588, 261), // parts1
-    Size(836, 431), // parts2
-    Size(340, 875), // parts3
-    Size(476, 411), // parts4
-    Size(378, 466), // parts5
-    Size(444, 988), // parts6
-    Size(181, 151), // parts7
+    const Size(400, 180), // parts1
+    const Size(600, 260), // parts2
+    const Size(160, 650), // parts3
+    const Size(380, 300), // parts4
+    const Size(300, 360), // parts5
+    const Size(300, 800), // parts6
+    const Size(120, 130), // parts7
   ],
   [
     // 2732x2048
-    Size(873, 403), // parts1
-    Size(1244, 286), // parts2
-    Size(520, 1220), // parts3
-    Size(780, 507), // parts4
-    Size(581, 633), // parts5
-    Size(633, 1428), // parts6
-    Size(234, 254), // parts7
+    const Size(650, 340), // parts1
+    const Size(980, 110), // parts2
+    const Size(400, 1000), // parts3
+    const Size(600, 390), // parts4
+    const Size(400, 480), // parts5
+    const Size(422, 1130), // parts6
+    const Size(234, 254), // parts7
     // Size(873, 403), // parts1
     // Size(1244, 286), // parts2
     // Size(629, 1220), // parts3
@@ -300,13 +301,13 @@ List<List<Size>> _kyufuPuzzlePartSizes = [
   ],
   [
     // 2796x1290
-    Size(506, 199), // parts1
-    Size(683, 295), // parts2
-    Size(225, 739), // parts3
-    Size(416, 366), // parts4
-    Size(331, 390), // parts5
-    Size(309, 835), // parts6
-    Size(129, 118), // parts7
+    const Size(506, 199), // parts1
+    const Size(683, 295), // parts2
+    const Size(225, 739), // parts3
+    const Size(416, 366), // parts4
+    const Size(331, 390), // parts5
+    const Size(309, 835), // parts6
+    const Size(129, 118), // parts7
     // Size(506, 199), // parts1
     // Size(683, 295), // parts2
     // Size(320, 739), // parts3
@@ -317,13 +318,13 @@ List<List<Size>> _kyufuPuzzlePartSizes = [
   ],
   [
     // 1334x750
-    Size(263, 122), // parts1
-    Size(377, 172), // parts2
-    Size(106, 451), // parts3
-    Size(217, 192), // parts4
-    Size(170, 214), // parts5
-    Size(176, 521), // parts6
-    Size(45, 48), // parts7
+    const Size(263, 122), // parts1
+    const Size(377, 172), // parts2
+    const Size(106, 451), // parts3
+    const Size(217, 192), // parts4
+    const Size(170, 214), // parts5
+    const Size(176, 521), // parts6
+    const Size(45, 48), // parts7
     // Size(288, 178), // parts1
     // Size(445, 178), // parts2
     // Size(224, 451), // parts3
@@ -392,141 +393,141 @@ List<List<List<OnpuPuzzleSetting>>> _onpuPuzzleSettings = [
     // 2266x1488
     [
       // 全音符
-      OnpuPuzzleSetting(index: 1, offset: Offset(-235, -163)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-180, -120)),
     ],
     [
       // 2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-20, -580)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-335, 190)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-20, -460)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-210, 180)),
     ],
     [
       // 4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-50, -580)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-355, 190)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-50, -450)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-240, 170)),
     ],
     [
       // 8分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-50, -580)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-355, 190)),
-      OnpuPuzzleSetting(index: 4, offset: Offset(-15, -590)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-50, -450)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-240, 170)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(35, -460)),
     ],
     [
       // 付点2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-20, -580)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-335, 190)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(90, 180)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-20, -450)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-210, 180)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(120, 180)),
     ],
     [
       // 付点4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-50, -580)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-355, 190)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(70, 180)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-50, -450)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-240, 170)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(110, 180)),
     ]
   ],
   [
     // 2732x2048
     [
       // 全音符
-      OnpuPuzzleSetting(index: 1, offset: Offset(-331.5, -227.5)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-280.5, -200.5)),
     ],
     [
       // 2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -800)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-465, 285)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -760)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-290, 200)),
     ],
     [
       // 4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-20, -800)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-505, 245)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-0, -760)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-310, 200)),
     ],
     [
       // 8分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-20, -800)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-505, 245)),
-      OnpuPuzzleSetting(index: 4, offset: Offset(15, -800)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-20, -800)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-330, 160)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(35, -830)),
     ],
     [
       // 付点2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -800)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-465, 285)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(160, 280)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -790)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-295, 190)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(160, 190)),
     ],
     [
       // 付点4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-20, -800)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-505, 245)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(160, 280)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-20, -770)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-330, 190)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(160, 200)),
     ]
   ],
   [
     // 2796x1290
     [
       // 全音符
-      OnpuPuzzleSetting(index: 1, offset: Offset(-175, -127.5)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-175, -127.5)),
     ],
     [
       // 2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -470)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-230, 200)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -470)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-230, 200)),
     ],
     [
       // 4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -470)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-240, 160)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -470)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-240, 160)),
     ],
     [
       // 8分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-40, -470)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-280, 160)),
-      OnpuPuzzleSetting(index: 4, offset: Offset(-20, -470)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-40, -470)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-280, 160)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(-20, -470)),
     ],
     [
       // 付点2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-10, -470)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-240, 200)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(110, 200)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-10, -470)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-240, 200)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(110, 200)),
     ],
     [
       // 付点4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -470)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-240, 160)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(110, 180)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -470)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-240, 160)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(110, 180)),
     ]
   ],
   [
     // 1334x750
     [
       // 全音符
-      OnpuPuzzleSetting(index: 1, offset: Offset(-105.5, -92.5)),
-      // OnpuPuzzleSetting(index: 1, offset: Offset(-50.5, -92.5)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-105.5, -92.5)),
+      // OnpuPuzzleSetting(index: 1, offset: const Offset(-50.5, -92.5)),
     ],
     [
       // 2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -290)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-140, 100)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -290)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-140, 100)),
     ],
     [
       // 4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -290)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-155, 90)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -290)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-155, 90)),
     ],
     [
       // 8分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-15, -290)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-170, 90)),
-      OnpuPuzzleSetting(index: 4, offset: Offset(0, -275)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-15, -290)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-170, 90)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(0, -275)),
     ],
     [
       // 付点2分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(0, -290)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-140, 100)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(50, 100)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(0, -290)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-140, 100)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(50, 100)),
     ],
     [
       // 付点4分音符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-15, -290)),
-      OnpuPuzzleSetting(index: 2, offset: Offset(-170, 90)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(40, 100)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-15, -290)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-170, 90)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(40, 100)),
     ]
   ]
 ];
@@ -536,76 +537,76 @@ List<List<List<OnpuPuzzleSetting>>> _kyufuPuzzleSettings = [
     // 2266x1488
     [
       // 全休符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-305, -70)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-370, -235)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-100, -100)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-200, -200)),
     ],
     [
       // 8分休符
-      OnpuPuzzleSetting(index: 2, offset: Offset(-120, -300)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(-295, -445)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-120, -300)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(-305, -445)),
     ],
     [
       // 付点4分休符
-      OnpuPuzzleSetting(index: 4, offset: Offset(-270, 136)),
-      OnpuPuzzleSetting(index: 5, offset: Offset(-200, -600)),
-      OnpuPuzzleSetting(index: 6, offset: Offset(100, -200)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(-250, 136)),
+      OnpuPuzzleSetting(index: 5, offset: const Offset(-240, -510)),
+      OnpuPuzzleSetting(index: 6, offset: const Offset(20, -180)),
     ]
   ],
   [
     // 2732x2048
     [
       // 全休符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-450, -145)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-720, -210)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-320, -140)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-500, -130)),
     ],
     [
       // 8分休符
-      OnpuPuzzleSetting(index: 2, offset: Offset(-200, -400)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(-460, -500)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-200, -400)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(-460, -420)),
     ],
     [
       // 付点4分休符
-      OnpuPuzzleSetting(index: 4, offset: Offset(-320, 230)),
-      OnpuPuzzleSetting(index: 5, offset: Offset(-300, -800)),
-      OnpuPuzzleSetting(index: 6, offset: Offset(150, -200)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(-240, 140)),
+      OnpuPuzzleSetting(index: 5, offset: const Offset(-300, -800)),
+      OnpuPuzzleSetting(index: 6, offset: const Offset(80, -340)),
     ]
   ],
   [
     // 2796x1290
     [
       // 全休符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-250, -42)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-340, -172)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-250, -42)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-340, -172)),
     ],
     [
       // 8分休符
-      OnpuPuzzleSetting(index: 2, offset: Offset(-70, -300)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(-225, -405)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-70, -300)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(-225, -405)),
     ],
     [
       // 付点4分休符
-      OnpuPuzzleSetting(index: 4, offset: Offset(-250, 123)),
-      OnpuPuzzleSetting(index: 5, offset: Offset(-150, -500)),
-      OnpuPuzzleSetting(index: 6, offset: Offset(100, -150)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(-250, 123)),
+      OnpuPuzzleSetting(index: 5, offset: const Offset(-150, -500)),
+      OnpuPuzzleSetting(index: 6, offset: const Offset(100, -150)),
     ]
   ],
   [
     // 1334x750
     [
       // 全休符
-      OnpuPuzzleSetting(index: 0, offset: Offset(-140, -52)),
-      OnpuPuzzleSetting(index: 1, offset: Offset(-210, -120)),
+      OnpuPuzzleSetting(index: 0, offset: const Offset(-140, -52)),
+      OnpuPuzzleSetting(index: 1, offset: const Offset(-210, -120)),
     ],
     [
       // 8分休符
-      OnpuPuzzleSetting(index: 2, offset: Offset(-70, -150)),
-      OnpuPuzzleSetting(index: 3, offset: Offset(-170, -220)),
+      OnpuPuzzleSetting(index: 2, offset: const Offset(-70, -150)),
+      OnpuPuzzleSetting(index: 3, offset: const Offset(-170, -220)),
     ],
     [
       // 付点4分休符
-      OnpuPuzzleSetting(index: 4, offset: Offset(-135, 43)),
-      OnpuPuzzleSetting(index: 5, offset: Offset(-100, -340)),
-      OnpuPuzzleSetting(index: 6, offset: Offset(80, -100)),
+      OnpuPuzzleSetting(index: 4, offset: const Offset(-135, 43)),
+      OnpuPuzzleSetting(index: 5, offset: const Offset(-100, -340)),
+      OnpuPuzzleSetting(index: 6, offset: const Offset(80, -100)),
     ]
   ]
 ];
@@ -696,7 +697,7 @@ List<List<Offset>> _kyufuStartPositions = [
   [
     // 2266x1488
     const Offset(-300, -400),
-    const Offset(0, -400),
+    const Offset(-100, -400),
     const Offset(300, -400),
     const Offset(0, 0),
     const Offset(-300, 400),
@@ -705,8 +706,8 @@ List<List<Offset>> _kyufuStartPositions = [
   ],
   [
     // 2732x2048
-    const Offset(-350, -600),
-    const Offset(0, -600),
+    const Offset(-350, -300),
+    const Offset(-200, -300),
     const Offset(350, -600),
     const Offset(0, 0),
     const Offset(-350, 600),
@@ -878,12 +879,18 @@ double getPartAngle(BuildContext context, int level, int index, bool type) {
     }
   } else {
     if (screenIndex == 1) {
+      console([screenIndex]);
       if (level != 0 && index == 1) {
         angle = 20.5; // 全休符以外の時は線の角度を変える
       } else if (level != 1 && index == 3) {
-        angle = 35; // 8分休符以外の時は黒丸の角度を変える
+        angle = 25; // 8分休符以外の時は黒丸の角度を変える
       } else if (level != 1 && index == 2) {
-        angle = -10; // 8分休符以外の時は斜め線の角度を変える
+        angle = 0; // 8分休符以外の時は斜め線の角度を変える
+        // angle = -10; // 8分休符以外の時は斜め線の角度を変える
+      }
+
+      if (level != 2 && index == 5) {
+        angle = 0;
       }
     } else {
       if (level == 0 && index == 1) {
@@ -1012,22 +1019,22 @@ List<List<String>> soundSettings = [
 List<ViewSetting> _quizStartButtonViewSettings = [
   ViewSetting(
     //2266x1488
-    position: Offset(700, 1280),
+    position: const Offset(700, 1280),
     size: const Size(342, 126),
   ),
   ViewSetting(
     //2732x2048
-    position: Offset(800, 1770),
+    position: const Offset(800, 1770),
     size: const Size(471, 173),
   ),
   ViewSetting(
     //2796x1290
-    position: Offset(2200, 800),
+    position: const Offset(2200, 800),
     size: const Size(399, 146),
   ),
   ViewSetting(
     //1334x750
-    position: Offset(1000, 440),
+    position: const Offset(1000, 440),
     size: const Size(232, 86),
   ),
 ];
@@ -1039,22 +1046,22 @@ ViewSetting getStartButtonViewSetting(BuildContext context) {
 List<ViewSetting> _quizNextButtonViewSettings = [
   ViewSetting(
     //2266x1488
-    position: Offset(1200, 1292),
+    position: const Offset(1200, 1292),
     size: const Size(340, 114),
   ),
   ViewSetting(
     //2732x2048
-    position: Offset(1500, 1786),
+    position: const Offset(1500, 1786),
     size: const Size(468, 157),
   ),
   ViewSetting(
     //2796x1290
-    position: Offset(2200, 1000),
+    position: const Offset(2200, 1000),
     size: const Size(397, 133),
   ),
   ViewSetting(
     //1334x750
-    position: Offset(1000, 550),
+    position: const Offset(1000, 550),
     size: const Size(231, 77),
   ),
 ];

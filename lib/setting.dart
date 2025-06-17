@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
+
+void console(List<dynamic> parameters) {
+  for (var parameter in parameters) {
+    developer.log(parameter.toString());
+  }
+}
 
 Size getScreenSize(BuildContext context) {
   final Size size = MediaQuery.of(context).size;
